@@ -1,14 +1,15 @@
 class Api::SessionsController < ApplicationController
   def create
-    user = User.find_by_credentials(
+    @user = User.find_by_credentials(
       params[:user][:username],
       params[:user][:password]
     )
 
-    if user.nil?
-      render json: 'Credentials are wrong'
+    if @user.nil?
+      render json: ["Invalid username/password combination"], status: 401
     else
-      render json: "Welcome back #{user.username}!"
+      login!(@user)
+      render json: "api/users/show"
     end
   end
 
@@ -16,7 +17,12 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
-    redirect_to new_session_url # You don't need to redirect
+    @user = current_user
+    if @user
+      logout!
+      render "api/users/show"
+    else
+      render json: ["Nobody signed in"], status: 404
+    end
   end
 end
