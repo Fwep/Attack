@@ -13,6 +13,10 @@ class Api::SessionsController < ApplicationController
   end
 
   def new
+  end
 
+  def destroy
+    logout!
+    redirect_to new_session_url # You don't need to redirect
   end
 end
