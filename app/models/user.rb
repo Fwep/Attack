@@ -39,19 +39,6 @@ class User < ApplicationRecord
     user.is_password?(password) ? user : nil
   end
 
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      render json: @user
-    else
-      render json: @user.errors.full_messages
-  end
-
-  def new
-    @user = User.new
-  end
-
   def password=(password) # To hash the password for the user
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -62,10 +49,6 @@ class User < ApplicationRecord
   end
 
   private
-  def user_params
-    params.require(:user).permit(:username, :password)
-  end
-
   def ensure_session_token
     self.session_token ||= self.class.generate_session_token
   end
