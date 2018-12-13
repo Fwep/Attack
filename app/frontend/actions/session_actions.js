@@ -11,6 +11,8 @@ export const receiveCurrentUser = currentUser => {
   };
 };
 
+// Test
+
 export const logoutCurrentUser = () => {
   return {
     type: LOGOUT_CURRENT_USER
