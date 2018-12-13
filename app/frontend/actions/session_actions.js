@@ -11,8 +11,6 @@ export const receiveCurrentUser = currentUser => {
   };
 };
 
-// Test
-
 export const logoutCurrentUser = () => {
   return {
     type: LOGOUT_CURRENT_USER
@@ -45,7 +43,7 @@ export const logout = () => dispatch => {
 };
 
 export const signup = user => dispatch => {
-  return APIUtil.signUp(user)
+  return APIUtil.signup(user)
     .then(user => (
       dispatch(receiveCurrentUser(user))))
 };
