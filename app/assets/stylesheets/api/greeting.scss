@@ -1,11 +1,35 @@
+// @font-face {
+//   font-family: 'Plantin';
+//   src: url('../../fonts/Plantin.ttf')
+// }
+//
+// h1#headline {
+//   font-family: Plantin;
+// }
+img.cooler {
+  width: 655px;
+  height: 584px;;
+}
+
 .greeting_body {
   width: 1920px;
   height: 710px;
+  background-color: white;
+}
+
+.greeting_body h1{
+  font-size: 80px;
+  line-height: 1.05;
+  font-family: TIMES;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  max-width: 500px;
 }
 
 .greeting-blurb {
   color: #5b5e6d;
-  font-family: sans-serif;
+  font-family: sans-serif ;
   font-weight: 400;
   line-height: 1.5;
   max-width: 44 rem;
@@ -15,9 +39,4 @@
   width: 600px;
   height: 120px;
   letter-spacing: normal;
-}
-
-img.cooler {
-  width: 655px;
-  height: 584px;;
 }
