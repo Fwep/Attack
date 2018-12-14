@@ -14,10 +14,10 @@ import { AuthRoute } from './../util/route_util';
 const App = () => (
     <div>
       <header>
-        <h1>Attack</h1>
-        <GreetingContainer/>
       </header>
+      <h1>Attack</h1>
       <Switch>
+        <Route path="/" component={GreetingContainer}/>
         <AuthRoute exact path="/login" component={LoginFormContainer}/>
         <AuthRoute exact path="/signup" component={SignupFormContainer}/>
       </Switch>
