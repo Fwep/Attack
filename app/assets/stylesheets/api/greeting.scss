@@ -1,42 +1,76 @@
-// @font-face {
-//   font-family: 'Plantin';
-//   src: url('../../fonts/Plantin.ttf')
-// }
-//
-// h1#headline {
-//   font-family: Plantin;
-// }
+.greeting-header {
+  font-family: Slack-Tiempos, "Times New Roman", Georgia, serif;
+  font-size: 4rem !important;
+  font-weight: 900;
+  font-style: bold;
+  color: rgb(51, 54, 58);
+
+  text-align: left;
+  line-height: 1.05 !important;
+
+  max-width: 14em;
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
 img.cooler {
   width: 655px;
   height: 584px;;
 }
 
-.greeting_body {
+.hero_content {
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+
+.main-greeting-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.greeting-body {
   width: 1920px;
   height: 710px;
   background-color: white;
 }
 
-.greeting_body h1{
-  font-size: 80px;
-  line-height: 1.05;
-  font-family: TIMES;
-  font-weight: bold;
-  line-height: 1.5;
-  margin-bottom: 16px;
+.greeting-body h1{
   max-width: 500px;
+  margin-bottom: 16px;
+
+  font-family: Times;
+  font-size: 80px;
+  font-weight: bold;
+
+  text-align: left;
+
+  line-height: 1.05;
+  line-height: 1.5;
+
 }
 
 .greeting-blurb {
-  color: #5b5e6d;
-  font-family: sans-serif ;
-  font-weight: 400;
-  line-height: 1.5;
-  max-width: 44 rem;
-  text-align: left;
-  display: block;
-  margin-bottom: 32px;
+  max-width: 44rem;
   width: 600px;
   height: 120px;
+  margin-bottom: 32px;
+
+  font-family: Slack-Averta, appleLogo, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgb(90, 90, 90);
+  text-align: left;
+  line-height: 1.5;
+
   letter-spacing: normal;
+
+  display: block;
 }
