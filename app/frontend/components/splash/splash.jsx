@@ -5,7 +5,6 @@ import SignUpFormContainer from '../session_form/signup_form_container';
 
 const Splash = () => (
   <div>
-    <
     <GreetingContainer/>
   </div>
 );
