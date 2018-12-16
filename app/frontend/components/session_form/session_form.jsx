@@ -39,34 +39,27 @@ class SessionForm extends React.Component {
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
-            <br/>
-            Please {this.props.formType} or {this.props.navLink}
             {this.renderErrors()}
             <div className="login-form">
-              <br/>
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="login-username"
+                    placeholder="username"
+                  />
 
-              <label>Username:
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                />
-              </label>
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-password"
+                  />
+                <br/>
 
-              <br/>
-
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-
-              <br/>
-
-              <input type="submit" value={this.props.formType} />
+                <input type="submit" value="Get Started"
+                className="form__sign-up form__sign-up:hover"/>
             </div>
+
+            <p> Already using Attack? <a href="/login">Sign in</a>.</p>
 
           </form>
         </div>
