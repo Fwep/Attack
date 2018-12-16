@@ -1,0 +1,77 @@
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+form p {
+  margin-top: .65rem;
+  text-align: center;
+    @media (min-width: 64rem) {text-align: left;}
+  font-size: calc(1rem + (-2 * (100vw - 400px)/ 624));
+    @media (min-width: 64rem) {font-size: .875rem;}
+}
+
+form p a {
+  color: #a72a2a;
+  border-bottom: 1px solid #e63232;
+}
+
+.login-form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+    @media (min-width: 48rem) {flex-flow: row nowrap;}
+  max-width: 100%;
+}
+
+input.login-username {
+  display: inline-block;
+  background-color: #fff;
+
+  width: 90%;
+    @media (min-width: 48rem) {width: 35%;}
+  padding: 1.15rem 1rem;
+  margin-right: .5rem;
+
+  color: #5b5e6d;
+  font-family: sans-serif;
+  font-size: calc(1rem + (-1 * (100vw - 400px)/ 624));
+    @media (min-width: 48rem) {font-size: .9375rem;}
+
+  line-height: 1.2;
+
+  border-radius: 4px;
+  border: 1px solid #a8a9b0
+}
+
+input.form__sign-up {
+  display: inline-block;
+  padding: 19px 40px 20px;
+    @media (min-width: 64rem) {padding: .75rem .8rem;}
+  border-radius: 4px;
+  flex-basis: auto;
+  width: 82%;
+    @media (min-width: 48rem) {width: auto;}
+  @media (min-width: 48rem) {
+    height: 100%;
+    padding: 19px 40px 20px;
+  }
+
+  background-color: #e63232;
+
+  color: #fff;
+  font-family: sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  letter-spacing: normal;
+  line-height: 1.3;
+  text-transform: uppercase;
+
+  transition: // Similar to Slack's transition! Almost exactly the same, actually
+  box-shadow 420ms cubic-bezier(.165,.84,.44,1),
+  color 420ms cubic-bezier(.165,.84,.44,1),
+  background 420ms cubic-bezier(.165,.84,.44,1)
+}
