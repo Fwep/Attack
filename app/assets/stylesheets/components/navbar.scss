@@ -1,0 +1,125 @@
+div.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 4vw;
+}
+
+li.logo img {
+  height: 50px;
+  width: 50px;
+}
+
+ul.hamburger-dropdown {
+  display: block;
+}
+
+ul.navbar__copy-block li:not(.logo) {
+  display: none;
+}
+
+ul.navbar__form-block {
+  display: none;
+}
+
+ul.hamburger-dropdown > li {
+  width: 1.5rem;
+}
+
+.hamburger-dropdown ul { // The actual unordered list inside the burger
+  position: absolute;
+  top: 50px;
+  left: 0;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: black 5px 5px 10px;
+}
+
+ul.hamburger-dropdown > li {
+  background: url("/assets/hamburger.png");
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  cursor: pointer;
+}
+
+.hamburger-dropdown:hover ul {
+  display: flex;
+  background: ghostwhite;
+}
+
+.hamburger-dropdown ul li:hover a {
+  text-decoration: underline;
+}
+
+ul.navbar__copy-block li {
+  cursor: pointer;
+  color: #6d6f7b;
+
+  padding: 1rem;
+
+  font-size: .95rem;
+  font-family: sans-serif;
+  font-weight: 400;
+
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: normal;
+
+  line-height: 1.2;
+}
+
+/*
+  Non-mobile devices
+*/
+
+@media (min-width: 64rem) {
+  ul.hamburger-dropdown {
+    display: none;
+  }
+
+  .hamburger__ul li {
+    display: none;
+  }
+
+  ul.navbar__copy-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul.navbar__copy-block li:not(.logo) {
+    display: inline;
+  }
+
+  ul.navbar__copy-block li:not(.logo):hover,
+  {
+    color: #323648;
+    font-weight: 500;
+    transition: none!important;
+  }
+
+  ul.navbar__form-block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger-dropdown {
+    display: none;
+  }
+
+  a[href="#/signin"] {
+    color: #6d6f7b;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: normal;
+  }
+}
