@@ -2,20 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => (
-  <div>
-    <ul>
+  <div className="navbar">
+    <ul className="navbar__copy-block">
+      <li className="logo">
+        <img src="/assets/attackfavicon.png"
+        alt="attackfavicon"/>
+      </li>
       <li>Why Attack?</li>
       <li>Solutions</li>
-      <li>Resources</li>
+      <li><a href="https://www.github.com/Fwep/Attack.git">Resources</a></li>
       <li>Pricing</li>
     </ul>
 
-    <ul>
+    <ul className="hamburger-dropdown">
       <li>
-        <Link to="/login">Sign in</Link>
+        <ul className="navbar__form-block hamburger__ul">
+          <li className="form__list-el form__list-el--sign-up">
+            <Link to="/signin">Sign in</Link>
+          </li>
+          <li className="form__list-el form__list-el--sign-up">
+            <Link to="/signup" className="form__sign-up ">Get Started</Link>
+          </li>
+        </ul>
       </li>
-      <li>
-        <Link to="/signup">Sign Up</Link>
+    </ul>
+
+    <ul className="navbar__form-block">
+      <li className="form__list-el form__list-el--sign-up">
+        <Link to="/signin">Sign in</Link>
+      </li>
+      <li className="form__list-el form__list-el--sign-up">
+        <Link to="/signup" className="form__sign-up ">Get Started</Link>
       </li>
     </ul>
   </div>
