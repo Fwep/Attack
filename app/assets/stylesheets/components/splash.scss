@@ -28,8 +28,8 @@ h1.splash__header__headline {
   font-size: calc(2.2rem + (41.599999999999994 * (100vw - 400px)/ 624));
     @media (min-width: 64rem) {font-size: 4.8rem;}
   font-family: "Times New Roman", Georgia, serif;
-  font-weight: 600;
-  line-height: 1.05;
+  font-weight: 550;
+  line-height: .75;
   letter-spacing: normal;
   margin-left: 0;
   margin-right: 0;
@@ -42,14 +42,14 @@ p.splash__header__blurb {
   color: rgb(90,90,90);
   margin-left: 0rem !important;
   margin-right: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   max-width: 44rem;
 
   font-size: calc(1.0625rem + (3 * (100vw - 400px)/ 624));
     @media (min-width: 64rem) {font-size: 1.25rem;}
   font-family: sans-serif;
 
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: normal;
   text-align: left;
 }
@@ -76,4 +76,12 @@ div.splash__image--main img { // The actual image of Batman and Superman
   align-self: center;
   border: 0;
   max-width: 100%;
+}
+
+.signup-form-container form {
+
+}
+
+input.login-password {
+  display: none;
 }
