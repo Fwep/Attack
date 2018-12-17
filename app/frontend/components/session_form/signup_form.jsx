@@ -7,10 +7,14 @@ class SignUpForm extends React.Component {
     this.state = {
       username: '',
       email: '',
-      password: '',
+      password: ''
     };
 
   this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clear();
   }
 
   // /* This method will handle real-time updating of our user inputs */
@@ -25,7 +29,7 @@ class SignUpForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-  // /* .then(() => this.props.history.push('messages')); */
+      .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {
