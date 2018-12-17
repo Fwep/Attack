@@ -43,41 +43,55 @@ class SignUpForm extends React.Component {
   render() {
       return (
         // /* The main div container for the from */
-        <div>
-          <h1>Join the Attack community</h1>
-          <form onSubmit={this.handleSubmit}>
-            {this.renderErrors()}
-            <div>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="username"
-              />
-            </div>
+        <div className="signup-master-div">
+        <title>Sign Up | Attack</title>
+          <div className="modal">
+            <h1>Join the Attack community</h1>
+            <form onSubmit={this.handleSubmit}>
+              {this.renderErrors()}
+              <div>
+                <label>Email
+                  <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="email"
+                  />
+                </label>
+              </div>
 
-            <div>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="email"
-              />
-            </div>
-
-            <div>
-              <input
-                type="text"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="password"
-              />
-            </div>
+              <div>
+                <label>Username
+                  <input
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    placeholder="username"
+                  />
+                </label>
+              </div>
 
 
-            <input type="submit" value="Submit"/>
+              <div>
+                <label>Password (required)
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    placeholder="password"
+                  />
+                </label>
+                <p>
+                  Passwords must be at least 6 characters, and shouldn't
+                  be things like "password", "123456", or "abcdef".
+                </p>
+              </div>
 
-          </form>
+
+              <input type="submit" value="Submit" className="submit"/>
+
+            </form>
+          </div>
         </div>
       );
     }
