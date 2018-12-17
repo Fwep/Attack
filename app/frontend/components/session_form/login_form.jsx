@@ -10,6 +10,11 @@ class SignUpForm extends React.Component {
     };
 
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleDemo = this.handleDemo.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clear();
   }
 
   // /* This method will handle real-time updating of our user inputs */
@@ -25,6 +30,15 @@ class SignUpForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
       .then(() => this.props.history.push('/'));
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    this.setState({username: 'Batman', password: 'TonyStarkSucks'}, () => {
+      const user = Object.assign({}, this.state);
+      this.props.processForm(user)
+      .then(() => this.props.history.push('/messages'));
+    });
   }
 
   renderErrors() {
@@ -69,6 +83,7 @@ class SignUpForm extends React.Component {
 
 
               <input type="submit" value="Submit" className="submit"/>
+              <button onClick={this.handleDemo} className="submit">Demo Login</button>
 
             </form>
           </div>
