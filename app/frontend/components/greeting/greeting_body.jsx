@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpFormContainer from '../session_form/signup_form_container';
+import SplashSignUpContainer from '../session_form/splash_signup_container';
 
 const GreetingBody = ({currentUser, logout}) => (
   <div className="splash">
@@ -12,7 +12,7 @@ const GreetingBody = ({currentUser, logout}) => (
         or simply plan your next office meeting, and more, Attack has
         you covered.
       </p>
-      <SignUpFormContainer className="signup-form-container"/>
+      <SplashSignUpContainer className="signup-form-container"/>
     </header>
 
     <div className="splash__image--main">
