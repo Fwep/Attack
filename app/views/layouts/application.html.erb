@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>Where saving the world happens | Attack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('attackfavicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
     <%= yield %>
