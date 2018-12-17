@@ -1,3 +1,4 @@
+// React Stuff
 import React from 'react';
 import {
   Route,
@@ -5,21 +6,28 @@ import {
   Switch,
   HashRouter
 } from 'react-router-dom';
-import NavBar from './nav/navbar';
+
+// Components
+import NavBarContainer from './nav/navbar_container';
+import PlainNavBar from './nav/navbar--plain';
 import Splash from './splash/splash';
-import SignupFormContainer from './session_form/signup_form_container';
+import SignupContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
-import { AuthRoute } from './../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
       <header>
-        <Route path ="/" component={NavBar}/>
+        <Switch>
+          <Route exact path="/" component={NavBarContainer}/>
+          <Route exact path="/signin" component={PlainNavBar}/>
+          <Route exact path="/signup" component={PlainNavBar}/>
+        </Switch>
       </header>
       <Switch>
-        <Route path="/" component={Splash}/>
-        <AuthRoute exact path="/login" component={LoginFormContainer}/>
-        <Route exact path="/signup" component={SignupFormContainer}/>
+        <AuthRoute exact path="/signin" component={LoginFormContainer}/>
+        <AuthRoute exact path="/signup" component={SignupContainer}/>
+        <Route exact path="/" component={Splash}/>
       </Switch>
     </div>
 );
