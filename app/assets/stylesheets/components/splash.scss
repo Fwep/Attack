@@ -38,7 +38,7 @@ h1.splash__header__headline {
   max-width: 14em;
 }
 
-p.splash__header__blurb {
+p.splash__header__blurb { // When your team needs to kick butt...
   color: rgb(90,90,90);
   margin-left: 0rem !important;
   margin-right: auto;
@@ -76,12 +76,4 @@ div.splash__image--main img { // The actual image of Batman and Superman
   align-self: center;
   border: 0;
   max-width: 100%;
-}
-
-.signup-form-container form {
-
-}
-
-input.login-password {
-  display: none;
 }
