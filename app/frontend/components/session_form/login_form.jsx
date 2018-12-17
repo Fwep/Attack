@@ -6,7 +6,6 @@ class SignUpForm extends React.Component {
     super(props)
     this.state = {
       username: '',
-      email: '',
       password: '',
     };
 
@@ -25,7 +24,7 @@ class SignUpForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-  // /* .then(() => this.props.history.push('messages')); */
+      .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {
@@ -43,41 +42,36 @@ class SignUpForm extends React.Component {
   render() {
       return (
         // /* The main div container for the from */
-        <div>
-          <h1>Sign in to Attack</h1>
-          <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-            <div>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="username"
-              />
-            </div>
+        <div className="login-master-div">
+          <title>Sign in | Attack</title>
+          <div className="modal">
+            <h1>Sign in to Attack</h1>
+            <p>Enter your <b>username</b> and <b>password.</b></p>
+            <form onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
+              <div>
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  placeholder="username"
+                />
+              </div>
 
-            <div>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="email"
-              />
-            </div>
-
-            <div>
-              <input
-                type="text"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="password"
-              />
-            </div>
+              <div>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="password"
+                />
+              </div>
 
 
-            <input type="submit" value="Submit"/>
+              <input type="submit" value="Submit" className="submit"/>
 
-          </form>
+            </form>
+          </div>
         </div>
       );
     }
