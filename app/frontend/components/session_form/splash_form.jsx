@@ -30,8 +30,9 @@ class SplashForm extends React.Component {
   render() {
       return (
         <div className={`${this.props.class}`}>
+        <title>Where saving the world happens | Attack</title>
           <form onSubmit={this.handleSubmit} className="login">
-            <div className={`login-form signup`}>
+            <div className={'login-form'}>
                   <input type="text"
                     value={this.state.username}
                     onChange={this.update('username')}
