@@ -115,11 +115,15 @@ ul.navbar__copy-block li {
     display: none;
   }
 
-  a[href="#/signin"] {
+  .signin-link, #thisisitchief {
     color: #6d6f7b;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: normal;
   }
+}
+
+div.navbar.navbar--plain {
+  box-shadow: 1px 1px rgba(0,0,0,.1);
 }
