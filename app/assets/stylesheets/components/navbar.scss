@@ -126,4 +126,7 @@ ul.navbar__copy-block li {
 
 div.navbar.navbar--plain {
   box-shadow: 1px 1px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 1vw;
 }
