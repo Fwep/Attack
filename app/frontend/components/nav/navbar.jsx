@@ -37,7 +37,7 @@ const NavBar = ({currentUser, logout}) => {
     <div className="navbar">
       <ul className="navbar__copy-block">
         <li className="logo">
-          <img src="/assets/attackfavicon.png"
+          <img src={window.favicon}
           alt="attackfavicon"/>
         </li>
         <li>Why Attack?</li>
