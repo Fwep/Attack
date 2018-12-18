@@ -41,7 +41,7 @@ class SplashForm extends React.Component {
                   />
 
 
-                <input type="submit" value={`${this.props.submitText}`}
+                <input type="submit" value="Get Started"
                 className={`form__sign-up form__sign-up:hover ${this.props.class}`}/>
             </div>
 
