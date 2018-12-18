@@ -45,7 +45,7 @@ class SignUpForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>
+          <li className="errors" key={`error-${idx}`}>
             {error}
           </li>
         ))}
@@ -63,23 +63,19 @@ class SignUpForm extends React.Component {
             <p>Enter your <b>username</b> and <b>password.</b></p>
             <form onSubmit={this.handleSubmit}>
             {this.renderErrors()}
-              <div>
                 <input
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="username"
                 />
-              </div>
 
-              <div>
                 <input
                   type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="password"
                 />
-              </div>
 
 
               <input type="submit" value="Submit" className="submit"/>
