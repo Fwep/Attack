@@ -111,6 +111,15 @@ ul.navbar__copy-block li {
     align-items: center;
   }
 
+  ul.hamburger-dropdown ul.navbar__form-block.hamburger__ul {
+    position: absolute;
+    top: 0px;
+    left: -83px;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: black 5px 5px 10px;
+  }
+
   .hamburger-dropdown {
     display: none;
   }
