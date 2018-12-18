@@ -8,8 +8,6 @@ const mapStateToProps = state => {
   return {
     errors: state.errors.session,
     class: 'signup',
-    formType: 'Sign Up',
-    submitText: 'Get Started'
   };
 };
 
