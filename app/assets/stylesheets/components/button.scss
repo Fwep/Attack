@@ -4,7 +4,7 @@
     padding: 1rem;
   }
 
-  .form__sign-up {
+  .form__sign-up, button.logoutbutton {
     display: inline-block;
     padding: .75rem .8rem;
     border-radius: 4px;
@@ -29,7 +29,7 @@
 
 }
 
-.form__sign-up:hover, form p a:hover {
+.form__sign-up:hover, form p a:hover, button.logoutbutton:hover {
   background-color: #f7e338;
   border-color: #f7e338;
 
