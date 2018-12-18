@@ -6,7 +6,7 @@ form p {
     @media (min-width: 64rem) {font-size: .875rem;}
 }
 
-form p a {
+form p a.signin-link {
   color: #a72a2a;
   border-bottom: 1px solid #e63232;
 }
@@ -38,7 +38,7 @@ input.form__sign-up {
     @media (min-width: 64rem) {padding: .75rem .8rem;}
   border-radius: 4px;
   flex-basis: auto;
-  width: 82%;
+  width: auto;
     @media (min-width: 48rem) {width: auto;}
   @media (min-width: 48rem) {
     height: 100%;
