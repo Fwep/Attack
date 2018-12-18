@@ -130,3 +130,13 @@ div.navbar.navbar--plain {
   justify-content: flex-start;
   padding: 0 1vw;
 }
+
+div.logout-greeting {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  p {
+    font-weight: bold;
+    padding: .5rem;
+  }
+}
