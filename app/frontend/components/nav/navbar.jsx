@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({currentUser, logout}) => {
   const rightDisplay = currentUser ?  (
-    <div>
+    <div className="logout-greeting">
       <p>Hello, {currentUser.username}</p>
-      <button onClick={logout}>Log out</button>
+      <button onClick={logout} className="logoutbutton">Log out</button>
     </div>
   ) : (
     <div>
