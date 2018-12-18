@@ -17,7 +17,6 @@ const GreetingBody = ({currentUser, logout}) => (
 
     <div className="splash__image--main">
       <img src={window.splashimage} alt="Attack brings all your communication together"/>
-
     </div>
 
   </div>
