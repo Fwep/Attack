@@ -48,6 +48,7 @@ div.signup-master-div {
         display: inline-block;
         padding: .75rem .8rem;
         border-radius: 4px;
+        text-align: center;
 
         background-color: #e63232;
 
@@ -60,7 +61,7 @@ div.signup-master-div {
         letter-spacing: normal;
         line-height: 1.3;
         text-transform: uppercase;
-        width: 50%;
+        width: 100%;
         @media (min-width: 48rem) {width: 100%;}
 
         transition: // Similar to Slack's transition! Almost exactly the same, actually
@@ -79,8 +80,7 @@ div.signup-master-div {
         display: inline-block;
         background-color: #fff;
 
-        width: 50%;
-        @media (min-width: 48rem) {width: 100%;}
+        width: 100%;
         padding: 1.15rem 1rem;
         margin-right: .5rem;
 
