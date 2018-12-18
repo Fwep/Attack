@@ -1,0 +1,11 @@
+ul.errors {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+li.errors {
+  color: #c54242;
+  font-size: calc(1rem + (-2 * (100vw - 400px)/ 624));
+    @media (min-width: 64rem) {font-size: .875rem;}
+}
