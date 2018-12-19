@@ -1,6 +1,12 @@
 class ChannelChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    stream_for "channel_channel"
+  end
+
+  def speak
+    message = Message.create(body: data['message'])
+    socket = { message: message.body }
+    ChannelChannel.broadcast_to('channel_channel', socket)
   end
 
   def unsubscribed
