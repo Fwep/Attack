@@ -3,7 +3,7 @@ class ChannelChannel < ApplicationCable::Channel
     stream_for "channel_channel"
   end
 
-  def speak
+  def speak(data)
     message = Message.create(body: data['message'])
     socket = { message: message.body }
     ChannelChannel.broadcast_to('channel_channel', socket)
