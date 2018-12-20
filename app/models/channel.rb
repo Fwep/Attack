@@ -13,4 +13,16 @@
 #
 
 class Channel < ApplicationRecord
+  validates :name, presence: true, unique: true, length: { maximum: 25 }
+  validates :description, length: { maximum: 250 }
+  validates :private, :is_direct, inclusion: { in: [:true, :false]}
+
+  belongs_to :user,
+    primary_key: :id,
+    foreign_key: :creator_id,
+    source_name: :User
+  has_many :messages
+  has_many :users,
+    through: :subscriptions
+
 end
