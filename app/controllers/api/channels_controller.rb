@@ -1,12 +1,11 @@
 class Api::ChannelsController < ApplicationController
   def show
-    @channel = Channel.find_by(params[:id])
+    @channel = Channel.find(params[:id])
     render "api/channels/show" if @channel
   end
 
   def index
     @channels = Channel.all
-    render "api/views/index"
   end
 
   def create
@@ -19,8 +18,8 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update
-    @channel = Channel.new(channel_params)
-    if @channel.save
+    @channel = Channel.find(params[:id])
+    if @channel.update(channel_params)
       render "api/channels/show"
     else
       render @channel.errors.full_messages
