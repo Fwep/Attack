@@ -23,6 +23,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :subscriptions
+  has_many :channels, through: :subscriptions
+  has_many :messages
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
