@@ -10,6 +10,7 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
+    @channel.creator_id = current_user.id
     if @channel.save
       render "api/channels/show"
     else
@@ -28,6 +29,6 @@ class Api::ChannelsController < ApplicationController
 
   private
   def channel_params
-    params.require(:channel).permit(:creator_id, :name, :description, :private, :is_direct)
+    params.require(:channel).permit(:name, :description, :private, :is_direct)
   end
 end
