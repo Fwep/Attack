@@ -19,7 +19,7 @@ export const receiveChannels = channels => {
 
 export const createChannel = channel => dispatch => {
   return ChannelAPIUtil.createChannel(channel)
-    .then(channel => dispatch(receiveChannel(channel))
+    .then(channel => dispatch(receiveChannel(channel)))
 };
 
 export const fetchChannel = id => dispatch => {
@@ -33,6 +33,6 @@ export const fetchChannels = () => dispatch => {
 };
 
 export const updateChannel = (channel) => dispatch => {
-  return ChannelAPIUtil.updateChannel()
+  return ChannelAPIUtil.updateChannel(channel)
     .then(channel => dispatch(receiveChannel(channel)))
 };
