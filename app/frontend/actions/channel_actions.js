@@ -10,10 +10,12 @@ export const receiveChannel = channel => {
   }
 }
 
-export const receiveChannels = channels => {
+export const receiveChannels = payload => {
   return {
     type: RECEIVE_CHANNELS,
-    channels
+    channels: payload.channels,
+    subscriptions: payload.subscriptions,
+    users: payload.users,
   }
 }
 
@@ -29,7 +31,7 @@ export const fetchChannel = id => dispatch => {
 
 export const fetchChannels = () => dispatch => {
   return ChannelAPIUtil.fetchChannels()
-    .then(channels => dispatch(receiveChannels(channels)))
+    .then(payload => dispatch(receiveChannels(payload)))
 };
 
 export const updateChannel = (channel) => dispatch => {
