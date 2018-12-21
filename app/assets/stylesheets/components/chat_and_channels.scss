@@ -1,0 +1,17 @@
+div.sidebar {
+  background-color: #e63232;
+  width: 220px;
+  height: 1280px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    li {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
