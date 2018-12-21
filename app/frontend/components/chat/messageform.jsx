@@ -25,7 +25,7 @@ class MessageForm extends React.Component {
             type="text"
             value={this.state.body}
             onChange={this.update("body")}
-            placeholder="Type message here"
+            placeholder="Message #justiceleague"
           />
           <input type="submit" />
         </form>
