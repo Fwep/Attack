@@ -5,19 +5,27 @@ class Sidebar extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchChannels();
+  };
+
 
   render() {
-    const channels = (
-      <ol>
-
-      </ol>
-    )
-
-    return(
-      <div className="sidebar">
-        <h1>SIDEBAR</h1>
-      </div>
-    );
+    console.log(this.props.channels);
+    if (this.props.channels.length === 0) {
+      return(
+        <div>
+        </div>
+      );
+    } else {
+      return(
+        <div className="sidebar">
+          <ul>
+            {this.props.channels.map(channel => <li>{channel.name}</li>)}
+          </ul>
+        </div>
+      );
+    }
   };
 };
 
