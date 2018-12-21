@@ -11,7 +11,6 @@ class Sidebar extends React.Component {
 
 
   render() {
-    console.log(this.props.channels);
     if (this.props.channels.length === 0) {
       return(
         <div>
