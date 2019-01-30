@@ -14,7 +14,7 @@ import Splash from './splash/splash';
 import SignupContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SidebarContainer from './channels/sidebar_container';
-import ChatRoom from './chat/chatroom';
+import ChatRoomContainer from './chat/ChatRoomContainer';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -33,8 +33,8 @@ const App = () => (
         <AuthRoute exact path="/signin" component={LoginFormContainer}/>
         <AuthRoute exact path="/signup" component={SignupContainer}/>
         <Route exact path="/" component={Splash}/>
-        <ProtectedRoute exact path="/messages" component={ChatRoom}/>
-        <ProtectedRoute exact path="/channels" component={ChatRoom}/>
+        <ProtectedRoute exact path="/messages" component={ChatRoomContainer}/>
+        <ProtectedRoute exact path="/channels" component={ChatRoomContainer}/>
         <Redirect to="/"/>
       </Switch>
     </div>
