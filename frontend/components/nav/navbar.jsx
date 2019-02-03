@@ -40,10 +40,7 @@ const NavBar = ({currentUser, logout}) => {
           <img src={window.favicon}
           alt="attackfavicon"/>
         </li>
-        <li>Why Attack?</li>
-        <li>Solutions</li>
-        <li><a href="https://www.github.com/Fwep/Attack.git">Resources</a></li>
-        <li>Pricing</li>
+        <li><a href="https://www.github.com/Fwep/Attack.git">Source</a></li>
       </ul>
       {rightDisplay}
     </div>
