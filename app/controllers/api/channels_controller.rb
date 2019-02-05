@@ -1,6 +1,7 @@
 class Api::ChannelsController < ApplicationController
   def show
-    @channel = Channel.find(params[:id])
+    @messages = Message.all
+    # @channel = Channel.find(params[:id])
     render "api/channels/show" if @channel
   end
 
