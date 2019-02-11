@@ -4,7 +4,6 @@ import ChannelListItem from './channel_list_item';
 class ChannelList extends React.Component {
 
   render() {
-    console.log(this.props.channels)
     const channels = Object.values(this.props.channels).filter(
       channel => channel.isDirect === false
     );
