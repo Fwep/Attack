@@ -1,4 +1,5 @@
 import React from 'react';
+import AppNavBarContainer from '../nav/app-navbar_container';
 import SidebarContainer from '../sidebar/sidebar_container';
 
 class MessageForm extends React.Component {
@@ -18,11 +19,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
-        <header>
-          {`#general`}
-          <br></br>
-          {`10 users`}
-        </header>
+        <AppNavBarContainer />
         <SidebarContainer/>
         <MessageForm/>
       </div>
