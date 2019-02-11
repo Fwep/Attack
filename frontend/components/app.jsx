@@ -21,7 +21,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupContainer}/>
       <Route exact path="/" component={NavBarContainer}/>
       <Route exact path="/" component={Splash}/>
-      <ProtectedRoute path="/channels" component={Main} />
+      <ProtectedRoute path="/channels/:channelId" component={Main} />
     </div>
 );
 
