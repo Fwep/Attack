@@ -23,7 +23,7 @@ export const createChannelSubscription = (channelId, receiveMessage) => dispatch
     {
       received: function (data) {
         const message = JSON.parse(data.message);
-        receiveMessage(message);
+        dispatch(receiveMessage(message));
         updateScroll();
       },
       speak: function(message) {

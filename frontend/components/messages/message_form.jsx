@@ -24,7 +24,8 @@ class MessageForm extends React.Component {
 
   handleKeyPress(e) {
     if (e.key === 'Enter' && !e.shiftKey) {
-      App[parseInt(this.props.currentChannelId)].speak(this.state);
+      App[parseInt(this.props.currentChannelId)].speak(this.state)
+      this.props.fetchMessages(this.props.currentChannelId);
       this.setState({ body: '' });
     }
   }
