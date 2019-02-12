@@ -1,8 +1,8 @@
 import {
   RECEIVE_CHANNELS,
   RECEIVE_CHANNEL,
-} from '../../actions/channel_actions';
-import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
+} from "../../actions/channel_actions";
+import { LOGOUT_CURRENT_USER } from "../../actions/session_actions";
 import merge from "lodash/merge";
 
 const channelsReducer = (state = {}, action) => {
