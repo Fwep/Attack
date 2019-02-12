@@ -13,14 +13,12 @@ class SplashForm extends React.Component {
   this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // /* This method will handle real-time updating of our user inputs */
   update(field) {
     return e => {
       this.setState({[field]: e.target.value})
     };
   }
 
-  // /* This method will handle submission of our form */
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -30,22 +28,20 @@ class SplashForm extends React.Component {
   render() {
       return (
         <div className={`${this.props.class}`}>
-        <title>Where saving the world happens | Attack</title>
+          <title>Where saving the world happens | Attack</title>
           <form onSubmit={this.handleSubmit} className="login">
-            <div className={'login-form'}>
-                  <input type="text"
-                    value={this.state.username}
-                    onChange={this.update('username')}
-                    className={'login-username signup'}
-                    placeholder="username"
-                  />
-
-
-                <input type="submit" value="Get Started"
-                className={`form__sign-up form__sign-up:hover ${this.props.class}`}/>
+            <div className="login-form">
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className={'login-username signup'}
+                placeholder="username"
+              />
+              <input type="submit" value="Get Started"
+              className={`form__sign-up form__sign-up:hover ${this.props.class}`}/>
             </div>
 
-            <p className={`${this.props.class}`}> Already using Attack? <Link className="signin-link" to="/signin">Sign in</Link>.</p>
+            <p className={`${this.props.class}`}>Already using Attack?<Link className="signin-link" to="/signin">Sign in</Link>.</p>
 
           </form>
         </div>
