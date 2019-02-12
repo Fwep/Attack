@@ -7,7 +7,7 @@ import {
 // Components
 import PlainNavBar from './nav/navbar--plain';
 import NavBarContainer from './nav/navbar_container';
-import Splash from './splash/splash';
+import GreetingContainer from './greeting/greeting_container';
 import SignupContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -20,7 +20,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={PlainNavBar}/>
       <AuthRoute exact path="/signup" component={SignupContainer}/>
       <Route exact path="/" component={NavBarContainer}/>
-      <Route exact path="/" component={Splash}/>
+      <Route exact path="/" component={GreetingContainer}/>
       <ProtectedRoute path="/channels/:channelId" component={Main} />
     </div>
 );
