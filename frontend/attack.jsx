@@ -21,6 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const root = document.getElementById("root");
   window.store = store;
-  window.fetchChannels = ChannelAPIUtil.fetchChannels;
   ReactDOM.render(<Root store={store}/>, root)
 });

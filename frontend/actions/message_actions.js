@@ -17,5 +17,3 @@ export const fetchMessages = channelId => dispatch => {
   return MessageAPIUtil.fetchMessages(channelId)
     .then(messages => dispatch(receiveMessages(messages)))
 };
-
-window.fetchMessages = fetchMessages;
