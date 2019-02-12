@@ -1,19 +1,7 @@
 import React from 'react';
 import AppNavBarContainer from '../nav/app-navbar_container';
 import SidebarContainer from '../sidebar/sidebar_container';
-
-class MessageForm extends React.Component {
-  render() {
-    return (
-      <form>
-        <textarea
-          placeholder="Message #general"
-        />
-      </form>
-    );
-  }
-}
-
+import ChatRoomContainer from '../chat/chat_room_container';
 
 class Main extends React.Component {
   render() {
@@ -21,7 +9,7 @@ class Main extends React.Component {
       <div className="main">
         <AppNavBarContainer />
         <SidebarContainer/>
-        <MessageForm/>
+        <ChatRoomContainer />        
       </div>
     );
   }
