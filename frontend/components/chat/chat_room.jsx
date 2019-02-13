@@ -13,6 +13,8 @@ class ChatRoom extends React.Component {
 
     fetchMessages(channelId);
     createSubscription(channelId, receiveMessage);
+    const messageList = document.getElementById("messagelist");
+    messageList.scrollTop = messageList.scrollHeight;
   }
   
   componentDidUpdate(prevProps) { 
@@ -20,6 +22,8 @@ class ChatRoom extends React.Component {
     if (prevProps.channelId !== this.props.channelId) {
       this.props.fetchMessages(this.props.channelId);
     }
+    const messageList = document.getElementById("messagelist");
+    messageList.scrollTop = messageList.scrollHeight;
   }
   
   render() {
@@ -27,12 +31,12 @@ class ChatRoom extends React.Component {
       <MessageListItem key={message.id} message={message}/>));
 
     return (
-      <div className="chat-room-container">
-        <ul>
+      <React.Fragment>
+        <ul id="messagelist" className="messages">
           {messageList}
         </ul>
         <MessageFormContainer />
-      </div>
+      </React.Fragment>
     );
   }
 }

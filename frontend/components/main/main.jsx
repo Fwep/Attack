@@ -6,11 +6,11 @@ import ChatRoomContainer from '../chat/chat_room_container';
 class Main extends React.Component {
   render() {
     return (
-      <div className="main">
+      <React.Fragment>
         <AppNavBarContainer />
         <SidebarContainer/>
         <ChatRoomContainer />        
-      </div>
+      </React.Fragment>
     );
   }
 }

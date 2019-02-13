@@ -12,19 +12,13 @@ export const fetchChannels = () => dispatch => (
     .then(channels => dispatch(receiveChannels(channels)))
 );
 
-function updateScroll() {
-  var element = document.getElementById("channel-messages");
-  element.scrollTop = element.scrollTop + 50;
-}
-
 export const createChannelSubscription = (channelId, receiveMessage) => dispatch => {
   App[channelId] = App.cable.subscriptions.create(
     { channel: "ChannelChannel", id: channelId },
     {
       received: function (data) {
         const message = JSON.parse(data.message);
-        receiveMessage(message);
-        updateScroll();
+        dispatch(receiveMessage(message));
       },
       speak: function(message) {
         return this.perform('speak', { message });

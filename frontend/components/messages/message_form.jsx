@@ -13,6 +13,7 @@ class MessageForm extends React.Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
@@ -22,10 +23,16 @@ class MessageForm extends React.Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault()
+  }
+
   handleKeyPress(e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      App[parseInt(this.props.currentChannelId)].speak(this.state);
-      this.setState({ body: '' });
+    if (e.which === 13 && !e.shiftKey) {
+      e.preventDefault(); // Need this so that textarea clears properly after entering message
+      App[(this.props.currentChannelId)].speak(this.state)
+      this.props.fetchMessages(this.props.currentChannelId)
+      this.setState({body: ''});
     }
   }
 
@@ -34,12 +41,16 @@ class MessageForm extends React.Component {
       return (<div>Loading...</div>)
     } else {
       return (
-      <form>
-        <textarea
+      <form 
+      onSubmit={(e) => handleSubmit(e)} 
+      className='message-form-area'>
+        <input
+        type="text"
+        className="message-input"
         onChange={(e) => this.handleInput(e)}
         onKeyPress={(e) => this.handleKeyPress(e)}
         value={this.state.body}
-        placeholder={`Message`} />
+        placeholder="Message" />
       </form>
       );
     }

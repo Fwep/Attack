@@ -11,9 +11,6 @@ li.logo img {
   width: 50px;
 }
 
-ul.hamburger-dropdown {
-  display: block;
-}
 
 ul.navbar__copy-block li:not(.logo) {
   display: none;
@@ -21,31 +18,6 @@ ul.navbar__copy-block li:not(.logo) {
 
 ul.navbar__form-block {
   display: none;
-}
-
-ul.hamburger-dropdown > li {
-  width: 1.5rem;
-}
-
-.hamburger-dropdown ul { // The actual unordered list inside the burger
-  position: absolute;
-  top: 50px;
-  left: 0;
-  flex-direction: column;
-  cursor: pointer;
-  box-shadow: black 5px 5px 10px;
-}
-
-ul.hamburger-dropdown > li {
-  background: url("/assets/hamburger.png");
-  background-repeat: no-repeat;
-  background-size: 25px 25px;
-
-  width: 50px;
-  height: 50px;
-
-  position: absolute;
-  cursor: pointer;
 }
 
 .hamburger-dropdown:hover ul {

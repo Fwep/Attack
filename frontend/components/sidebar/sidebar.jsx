@@ -8,10 +8,10 @@ class Sidebar extends React.Component {
   
   render() {
     return (
-      <div className = "sidebar" >
-        <div className="sidebar-box">
-          <button onClick={() => this.props.history.push('/')}><h2>Attack</h2></button>
-          <h2>{this.props.currentUser.username}</h2>
+      <div className="sidebar">
+        <div className="team_menu_user">
+          <button id="workspace-name" onClick={() => this.props.history.push('/')}><h2>Attack</h2></button>
+          <p>{this.props.currentUser.username}</p>
           <button onClick={() => this.props.logOut()}>Log Out</button>
         </div>
 

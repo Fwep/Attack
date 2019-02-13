@@ -9,8 +9,8 @@ class AppNavBar extends React.Component {
     }
 
     return (
-      <span className="channel-name-description">
-        <h1>#{channelName}</h1>
+      <span className="app-navbar">
+        <h1 className="channel-title-header">#{channelName}</h1>
       </span>
     );
   }

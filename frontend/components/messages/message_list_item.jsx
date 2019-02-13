@@ -26,16 +26,19 @@ class MessageListItem extends React.Component {
     const date = `${createdAt.getDate()}`;
 
     let hours = createdAt.getHours() % 12;
-    hours = (hours === 0) ? "12" : `${hours}`
-    const aside = (createdAt.getHours() > 0) && (createdAt.getHours < 12) ? 'AM' : 'PM';
-    const minutes = `${createdAt.getMinutes()}`
+    hours = (hours === 0) ? "12" : `${hours}`;
+    const aside = (createdAt.getHours() < 12)  ? 'AM' : 'PM';
+    let minutes = `${createdAt.getMinutes()}`;
+    if (minutes.length < 2) minutes = '0' + `${minutes}`
     
     const readableDate = `${day}, ${month} ${date}, ${hours}:${minutes} ${aside}`
 
     return (
-      <li>
-        <div>{message.author}</div>
-        <div>{readableDate}</div>
+      <li className="individual-message-box">
+        <div className="message-header">
+          <div className="authorname">{message.author}</div>
+          <div className="timestamp">{readableDate}</div>
+        </div>
         <p>{message.body}</p>
       </li>
     );
