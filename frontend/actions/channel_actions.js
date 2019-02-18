@@ -14,10 +14,10 @@ export const fetchChannels = () => dispatch => (
 
 export const createChannelSubscription = (channelId, receiveMessage) => dispatch => {
   App[channelId] = App.cable.subscriptions.create(
-    { channel: "ChannelChannel", id: channelId },
+    {channel: "ChannelChannel", id: channelId},
     {
-      received: function (data) {
-        const message = JSON.parse(data.message);
+      received: function(data) {
+        const message = JSON.parse(data.message)
         dispatch(receiveMessage(message));
       },
       speak: function(message) {
