@@ -10,3 +10,5 @@ Attack's main feature of live, instant messaging uses the *WebSocket* communicat
 * Ability to nest multiple contiguous messages from a user under one "block"
 * Hyperlinks to user's profile on messages
 * Dark Mode (aka Batman mode)
+* Protecting channels from those not registered
+* Allowing for multiple ActionCable subscriptions
