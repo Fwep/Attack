@@ -4,10 +4,11 @@ import merge from "lodash/merge";
 const messagesReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = {};
+  console.log(action)
 
   switch (action.type) {
     case RECEIVE_MESSAGE:
-      newState[message.id] = message;
+      newState[action.message.id] = action.message;
       return merge({}, state, newState);
     case RECEIVE_MESSAGES:
       action.messages.forEach(message => {
