@@ -1,16 +1,12 @@
-# We made this (I named it perfectly, calling it 'Channel')
 class ChannelChannel < ApplicationCable::Channel
   def subscribed
     stream_from "channel_channel"
+    p "Subscribed!"
   end
 
   def speak(data)
-    message = Message.create(data['message'])
-
-    # # This is an object. Broadcasting a string will throw an error
-    # socket = { message: message.body } 
-    
-    # ChannelChannel.broadcast_to('channel_channel', socket)
+    incoming_message = (data["message"])
+    created_message = Message.create(incoming_message)
   end
 
   def unsubscribed
