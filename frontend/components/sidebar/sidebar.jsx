@@ -15,9 +15,7 @@ class Sidebar extends React.Component {
           <button onClick={() => this.props.logOut()}>Log Out</button>
         </div>
 
-        <div className="sidebar-box">
-          <ChannelListContainer/>
-        </div>
+        <ChannelListContainer/>
     </div>
     );
   }
