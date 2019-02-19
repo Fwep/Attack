@@ -6,8 +6,6 @@ class SplashForm extends React.Component {
     super(props)
     this.state = {
       username: '',
-      email: '',
-      password: '',
     };
 
   this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +25,7 @@ class SplashForm extends React.Component {
 
   render() {
       return (
-        <div className={`${this.props.class}`}>
+        <div className="splash-signup">
           <title>Where saving the world happens | Attack</title>
           <form onSubmit={this.handleSubmit} className="login">
             <div className="login-form">
@@ -37,11 +35,12 @@ class SplashForm extends React.Component {
                 className={'login-username signup'}
                 placeholder="username"
               />
+
               <input type="submit" value="Get Started"
               className={`form__sign-up form__sign-up:hover ${this.props.class}`}/>
             </div>
 
-            <p className={`${this.props.class}`}>Already using Attack?<Link className="signin-link" to="/signin">Sign in</Link>.</p>
+            <p className={`${this.props.class}`}>Already using Attack? <Link className="signin-link" to="/signin">Sign in</Link>.</p>
 
           </form>
         </div>

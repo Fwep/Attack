@@ -1,79 +1,50 @@
-h1 {
-  color: rgb(51, 54, 58);
-}
+div.splash-grid {
+  display: grid;
+  grid-template-columns: 9.907407407% 13.333333333% 33.148148148% 22px 29.259259259% 12.314814815%;
+  grid-template-rows: 100px 69px minmax(auto, 125px) auto;
 
-div.splash {
-  display: flex;
-  flex-wrap: wrap;
-    @media (min-width: 48rem) {flex-wrap: nowrap;}
-  justify-content: space-between;
-  align-items: center;
+  max-width: 1080px;
+  margin: 0 191px;
 
-  padding: 0 4vw;
-}
+  h1.headline {
+    font-size: 4rem;
+    font-family: 'Arimo';
+    line-height: 1.12;
+    letter-spacing: -.8px;
 
-header.splash__header {
-  order: 1;
-    @media (min-width: 48rem) {order: 2}
-  display: block;
-  // Trying to be "pixel-perfect" here}
-  @media (min-width: 64rem) {flex-basis: 48.7804878%;}
-  width: 100%;
-  text-align: left;
-}
+    z-index: 5;
+    grid-column: 2/span 4;
+    grid-row: 1/span 2;
+    margin-bottom: 0;
+    margin-left: 5rem!important;
+  }
 
-h1.splash__header__headline {
-  // Assuming 16px is the default browser font-size
-  // Mobile-first design!
-  font-size: calc(2.2rem + (41.599999999999994 * (100vw - 400px)/ 624));
-    @media (min-width: 64rem) {font-size: 4.8rem;}
-  font-family: "Times New Roman", Georgia, serif;
-  font-weight: 550;
-  line-height: .85;
-  letter-spacing: normal;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 1rem;
-    @media (min-width: 48rem) {margin-bottom: 1.5rem;} // For tablets and up
-  max-width: 14em;
-}
+  p.sales-copy {
+    font-family: 'Varela Round';
+    font-size: 1em;
+    font-weight: 590;
+    line-height: 1.44444444;
+    letter-spacing: -.2px;
 
-p.splash__header__blurb { // When your team needs to kick butt...
-  color: rgb(90,90,90);
-  margin-left: 0rem !important;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  max-width: 44rem;
+    grid-column: 5/span 4;
+    grid-row: 3;
 
-  font-size: calc(1.0625rem + (3 * (100vw - 400px)/ 624));
-    @media (min-width: 64rem) {font-size: 1.25rem;}
-  font-family: sans-serif;
+    margin-top: 1em;
+  }
 
-  line-height: 1.4;
-  letter-spacing: normal;
-  text-align: left;
-}
+  img.splash-image {
+    height: 502px;
+    width: 650px;
+    
+    grid-column: 1/span 2;
+    grid-row: 2/span 3;
+  }
 
-div.splash__image--main { // The image container
-  order: 2;
-    @media (min-width: 48rem) {order: 1}
-  display: flex;
-  justify-content: center;
-
-  max-width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  @media (min-width: 64rem) {
-    max-width: 40.2%;
-    height: 500px;
-    margin: 0;
+  div.splash-signup {
+    grid-column: 5/span 2;
+    grid-row: 4;
+    align-self: start;
+    margin-bottom: 2rem;
   }
 }
 
-div.splash__image--main img { // The actual image of Batman and Superman
-  height: 62%;
-  @media (min-width: 64rem) {height: auto;}
-  align-self: center;
-  border: 0;
-  max-width: 100%;
-}

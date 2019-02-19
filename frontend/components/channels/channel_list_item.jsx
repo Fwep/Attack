@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class ChannelListItem extends React.Component {
   constructor(props) {
@@ -9,12 +9,15 @@ class ChannelListItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to={`/channels/${this.props.channel.id}`}>
+      <React.Fragment>
+        <NavLink 
+          to={`/channels/${this.props.channel.id}`}
+          activeClassName="selected"
+        >
           # {this.props.channel.name}
-        </Link>
+        </NavLink>
         <br />
-      </div>
+      </React.Fragment>
     )
   }
 }

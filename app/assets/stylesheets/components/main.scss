@@ -1,25 +1,31 @@
-main#root {
+div#main { /* Not to be confused with main#root, 
+  which is the element for the whole application, not just the main chatroom interface */
   width: 100%;
-  height: 100%;
+  height:100%;
+
   display: grid;
   grid-template-columns: 15% 85%;
   grid-template-rows: 7% 85% 8%;
-
+  
   overflow-x: hidden; // Annoying x-axis scollbar
 }
 
+
 div.sidebar {
   grid-area: 1/1/-1/span 1;
+
   background-color: #e63232;
   color: #f7e338;
 }
 
 .team_menu_user { // The name of the workspace + ${current user} + log out
-grid-area: 1/1/2/2;
+  grid-area: 1/1/2/2;
+
+  padding: 0 1rem;
 
   #workspace-name {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.25em;
+  font-weight: bold;
   font-family: 'Lato';
   color: #FFFFFF;
   }
@@ -27,6 +33,32 @@ grid-area: 1/1/2/2;
   p, button {
   font-size: .9em;
   font-family: 'Lato';
+  }
+}
+
+.channel-list {
+  grid-area: 2/1/-1/2;
+
+  h2 {
+    padding: 1em 1em 0em 1em;
+    font-size: 17px;
+  }
+  
+  a {
+    font-size: 17px;
+    width: 100%;
+
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 1em;
+  }
+
+  a:hover {
+    background-color: rgb(112, 15, 15);
+  }
+
+  a.selected {
+    background-color: rgb(240, 95, 95);
   }
 }
 
@@ -126,5 +158,3 @@ padding-left: 23px;
   border-radius: 4px;
   background-color: #e63232;
 }
-
-

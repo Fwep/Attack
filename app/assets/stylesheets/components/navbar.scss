@@ -1,123 +1,24 @@
-div.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.splash-navbar {
+ margin: 0 11em;
 
-  padding: 0 4vw;
+ display: flex;
+ justify-content: space-between;
+
+ font-family: 'Varela Round';
+ font-size: 0.95em;
+
+ .splash-navbar-right, .splash-navbar-left {
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   
+   li {
+     padding: 1rem;
+   }
+
+  }
 }
-
-li.logo img {
+li img {
   height: 50px;
   width: 50px;
-}
-
-
-ul.navbar__copy-block li:not(.logo) {
-  display: none;
-}
-
-ul.navbar__form-block {
-  display: none;
-}
-
-.hamburger-dropdown:hover ul {
-  display: flex;
-  background: ghostwhite;
-}
-
-.hamburger-dropdown ul li:hover a {
-  text-decoration: underline;
-}
-
-ul.navbar__copy-block li {
-  cursor: pointer;
-  color: #6d6f7b;
-
-  padding: 1rem;
-
-  font-size: .95rem;
-  font-family: sans-serif;
-  font-weight: 400;
-
-  text-decoration: none;
-  text-align: center;
-  letter-spacing: normal;
-
-  line-height: 1.2;
-}
-
-/*
-  Non-mobile devices
-*/
-
-@media (min-width: 64rem) {
-  ul.hamburger-dropdown {
-    display: none;
-  }
-
-  .hamburger__ul li {
-    display: none;
-  }
-
-  ul.navbar__copy-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  ul.navbar__copy-block li:not(.logo) {
-    display: inline;
-  }
-
-  ul.navbar__copy-block li:not(.logo):hover,
-  {
-    color: #323648;
-    font-weight: 500;
-    transition: none!important;
-  }
-
-  ul.navbar__form-block {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  ul.hamburger-dropdown ul.navbar__form-block.hamburger__ul {
-    position: absolute;
-    top: 0px;
-    left: -83px;
-    flex-direction: column;
-    cursor: pointer;
-    box-shadow: black 5px 5px 10px;
-  }
-
-  .hamburger-dropdown {
-    display: none;
-  }
-
-  .signin-link, #thisisitchief {
-    color: #6d6f7b;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: normal;
-  }
-}
-
-div.navbar.navbar--plain {
-  box-shadow: 1px 1px rgba(0,0,0,.1);
-  display: flex;
-  justify-content: flex-start;
-  padding: 0 1vw;
-}
-
-div.logout-greeting {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: baseline;
-  p {
-    font-weight: bold;
-    padding: .5rem;
-  }
 }

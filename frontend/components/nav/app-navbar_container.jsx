@@ -9,9 +9,4 @@ const mSP = ({ entities: { channels } }, ownProps) => {
   }
 }
 
-
-const mDP = dispatch => ({
-
-});
-
-export default withRouter(connect(mSP, mDP)(AppNavBar));
+export default withRouter(connect(mSP, null)(AppNavBar));

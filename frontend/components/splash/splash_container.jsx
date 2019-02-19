@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import GreetingBody from './greeting_body';
+import SplashBody from './splash_body';
 
 const mapStateToProps = ({ session, entities: {users} }) => {
   return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GreetingBody);
+export default connect(mapStateToProps, mapDispatchToProps)(SplashBody);
