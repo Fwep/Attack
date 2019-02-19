@@ -12,3 +12,6 @@ Attack's main feature of live, instant messaging uses the *WebSocket* communicat
 * Dark Mode (aka Batman mode)
 * Protecting channels from those not registered
 * Allowing for multiple ActionCable subscriptions
+* Custom URL
+* AWS hosting of profile photos
+* LinkedIn link
