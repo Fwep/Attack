@@ -2,50 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({currentUser, logout}) => {
-  const rightDisplay = currentUser ?  (
-    <div className="logout-greeting">
-      <p>Hello, {currentUser.username}</p>
-      <button onClick={logout} className="logoutbutton">Log out</button>
-    </div>
-  ) : (
-    <div>
-      <ul className="hamburger-dropdown">
+  const sessionFormBlock = currentUser ?  (
+    <ul className="splash-navbar-right">
       <li>
-      <ul className="navbar__form-block hamburger__ul">
-      <li className="form__list-el form__list-el--sign-up">
-      <Link to="/signin">Sign in</Link>
+        <p>Hello, {currentUser.username}</p>
       </li>
-      <li className="form__list-el form__list-el--sign-up">
-      <Link to="/signup" className="form__sign-up ">Get Started</Link>
-      </li>
-      </ul>
-      </li>
-      </ul>
 
-      <ul className="navbar__form-block">
-      <li className="form__list-el form__list-el--sign-up">
-      <Link id="thisisitchief" to="/signin">Sign in</Link>
+      <li>
+        <button onClick={logout} className="logoutbutton">Log out</button>
       </li>
-      <li className="form__list-el form__list-el--sign-up">
-      <Link to="/signup" className="form__sign-up ">Get Started</Link>
+    </ul>
+  ) : (
+    <ul className="splash-navbar-right">
+      <li>
+        <Link to="/signin">Sign in</Link>
       </li>
-      </ul>
-    </div>
+
+      <li>
+        <Link to="/signup" className="form__sign-up">Get Started</Link>
+      </li>
+    </ul>
   )
 
   return (
-    <div className="navbar">
-      <ul className="navbar__copy-block">
-        <li className="logo">
-          <img src={window.favicon}
-          alt="attackfavicon"/>
+    <div className="splash-navbar">
+      <ul className="splash-navbar-left">
+        <li>
+          <Link to="/">
+            <img src={window.favicon} alt="attackfavicon"/>
+          </Link>
         </li>
-        <li><a href="https://www.github.com/Fwep/Attack.git">Source</a></li>
+
+        <li>
+          <a href="https://www.github.com/Fwep">
+            <img src={window.octocat} alt="Github" title="Github"/>
+          </a>
+        </li>
       </ul>
-      {rightDisplay}
+
+      {sessionFormBlock}
     </div>
   );
-
-};
+}
 
 export default NavBar;
