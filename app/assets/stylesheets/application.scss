@@ -13,10 +13,15 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Arimo');
 // CSS Reset
 @import "base/reset";
 
 // Core
-
+main#root {
+  width: 100%;
+  height: 100%;
+}
 // Components
 @import "components/*";
