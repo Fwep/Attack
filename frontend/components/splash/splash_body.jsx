@@ -1,26 +1,28 @@
 import React from 'react';
 import SplashSignUpContainer from '../session_form/splash_signup_container';
+import NavBarContainer from '../nav/navbar_container';
 
-const GreetingBody = ({currentUser, logout}) => (
-  <div className="splash-container">
-    <div className="splash">
-      <header className="splash__header">
-        <h1 className="splash__header__headline">Where Saving the World Happens</h1>
-        <p className="splash__header__blurb">
-          When your team needs to kick butt, hire a new English butler,
-          deploy an AI super-assistant, review a battle plan, finalize
-          next year's reparations budget, measure a mutant's vitals,
-          or simply plan your next office meeting, and more, Attack has
-          you covered.
+const SplashBody = () => (
+  <React.Fragment>
+    <NavBarContainer/>
+    <div className="splash-grid">
+        <h1 className="headline">Imagine what you'll conquer together</h1>
+
+        <p className="sales-copy">
+          Attack is a command center for work, no matter what planet you're saving. 
+          It’s a place where communications dispatch, battle plans are made, 
+          and intel is always at your fingertips. 
+          With Attack, your team is better equipped.
         </p>
-        <SplashSignUpContainer className="signup-form-container"/>
-      </header>
 
-      <div className="splash__image--main">
-        <img src={window.splashimage} alt="Attack brings all your communication together"/>
-      </div>
-  </div>
-  </div>
+        <SplashSignUpContainer/>
+
+        <img 
+        className="splash-image" 
+        src={window.splashimage} 
+        alt="Attack brings all your communication together"/>
+    </div>
+  </React.Fragment>
 );
 
-export default GreetingBody;
+export default SplashBody;
