@@ -57,10 +57,43 @@ Code snippets to highlight your best code (markdown code snippets, NOT screensho
 ## Live Chat
 Attack's main feature of live messaging uses *WebSocket*s. Like HTTP, WebSocket is a communication protocol that uses what is known as _full-duplex_ communication.
 
+![Demo](app/assets/images/demo.gif)
+
  Whereas in HTTP request/response cycles, one machine must act as a sender and another as a receiver in disparate cycles, WebSockets allows for persistent connections between clients and servers, and allows for both entities to transmit and receive information simultaneously.
 
-The means by which we achieve full-duplex communications is via Rails's Action Cable library:
+The means by which we achieve full-duplex communications is via Rails's Action Cable library. When any user goes to the main application view, a _subscription_ to an Action Cable _channel_ is created. 
 
+```javascript
+  App[channelId] = App.cable.subscriptions.create(
+    {channel: "ChannelChannel", id: channelId},
+    {received: function(data) {
+        const message = JSON.parse(data.message)
+        dispatch(receiveMessage(message));
+      },
+      speak: function(message) {
+        return this.perform('speak', {message});
+      }
+    });
+  ```
+  When a user submits a message through a React component, the `speak` callback is invoked, and the message gets passed to the Rails backend. In Rails land, we have:
+
+  ```ruby
+  def speak(data)
+    incoming_message = (data["message"])
+    created_message = Message.create(incoming_message)
+  end
+  ```
+  In the creation of the indiviudal message resource, what is known as an _job_, which is essentially an operation, is performed (Rails's `ActiveJob` module), and the message gets broadcasted back to all the _subscribers_ of the original Action Cable channel.
+
+  ```ruby
+  def perform(message)
+    ActionCable.
+    server.
+    broadcast(
+      'channel_channel', message: render_messag(message)
+    )
+  end
+  ```
 
 ## Future features
 A non-exhaustive list of features to add to the application:
