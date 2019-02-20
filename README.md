@@ -50,10 +50,6 @@ In Terminal, navigate to the root directory of the project, and run the followin
 5. Navigate to your browser and go to `localhost:3000`
 6. Any changes made to the project will be logged by npm. To view any potential changes in your browser view, refresh the page.
 
-
-Delve deep into ~2 features that show off your technical abilities. Discuss both the challenges faced and your brilliant solutions.
-Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
-
 ## Live Chat
 Attack's main feature of live messaging uses *WebSocket*s. Like HTTP, WebSocket is a communication protocol that uses what is known as _full-duplex_ communication.
 
