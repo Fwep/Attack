@@ -38,6 +38,12 @@ const NavBar = ({currentUser, logout}) => {
             <img src={window.octocat} alt="Github" title="Github"/>
           </a>
         </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/tarancacacho">
+            <img src={window.linkedin} alt="LinkedIn" title="LinkedIn"/>
+          </a>
+        </li>
       </ul>
 
       {sessionFormBlock}

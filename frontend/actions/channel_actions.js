@@ -1,6 +1,12 @@
 import * as ChannelAPIUtil from '../util/channels_api_util';
 
 export const RECEIVE_CHANNELS = "RECEIVE_CHANNELS";
+export const RECEIVE_CHANNEL = "RECEIVE_CHANNEL";
+
+export const receiveChannel = channel => ({
+  type: RECEIVE_CHANNEL,
+  channel
+});
 
 export const receiveChannels = channels => ({
   type: RECEIVE_CHANNELS,
