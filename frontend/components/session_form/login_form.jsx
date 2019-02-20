@@ -28,7 +28,7 @@ class SignUpForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      .then(() => this.props.history.push('/channels'));
+      .then(() => this.props.history.push('/channels/16'));
   }
 
   handleDemo(e) {
@@ -36,7 +36,7 @@ class SignUpForm extends React.Component {
     this.setState({username: 'Batman', password: 'TonyStarkSucks'}, () => {
       const user = Object.assign({}, this.state);
       this.props.processForm(user)
-      .then(() => this.props.history.push('/channels/1'));
+      .then(() => this.props.history.push('/channels/16'));
     });
   }
 
