@@ -5,7 +5,6 @@
 
 
 ## Technologies
----
 - Ruby on Rails
 
     _Convention over configuraton_. Rails allows you to set up a web application very quickly without the need to write boilerplate that would make meeting the 10-day timeline for this application unfeasible, and so was my framework of choice.
@@ -42,7 +41,6 @@
 
 
 ## Installation
----
 In Terminal, navigate to the root directory of the project, and run the following
 
 1. `bundle install` (requires bundler)
@@ -57,7 +55,6 @@ Delve deep into ~2 features that show off your technical abilities. Discuss both
 Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
 
 ## Live Chat
----
 Attack's main feature of live messaging uses *WebSocket*s. Like HTTP, WebSocket is a communication protocol that uses what is known as _full-duplex_ communication.
 
  Whereas in HTTP request/response cycles, one machine must act as a sender and another as a receiver in disparate cycles, WebSockets allows for persistent connections between clients and servers, and allows for both entities to transmit and receive information simultaneously.
@@ -66,7 +63,6 @@ The means by which we achieve full-duplex communications is via Rails's Action C
 
 
 ## Future features
----
 A non-exhaustive list of features to add to the application:
 
 - [ ] Ability to nest multiple contiguous messages from a user under one "block"
