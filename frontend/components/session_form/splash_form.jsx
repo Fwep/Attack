@@ -20,7 +20,7 @@ class SplashForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.location.state = {username: this.state.username}
-      .then(this.props.history.push("/signup"));
+    this.props.history.push("/signup");
   }
 
   render() {
