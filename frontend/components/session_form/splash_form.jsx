@@ -19,8 +19,12 @@ class SplashForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.location.state = {username: this.state.username}
+      .then(this.props.history.push("/signup"));
+  }
+
+  componentDidMount() {
+    console.log(this.props.location)
   }
 
   render() {
@@ -36,11 +40,11 @@ class SplashForm extends React.Component {
                 placeholder="username"
               />
 
-              <input type="submit" value="Get Started"
-              className={`form__sign-up form__sign-up:hover ${this.props.class}`}/>
+              <Link to={{pathname: "/signup", state: {username: this.state.username}}}
+              className="form__sign-up form__sign-up:hover">Get Started</Link>
             </div>
 
-            <p className={`${this.props.class}`}>Already using Attack? <Link className="signin-link" to="/signin">Sign in</Link>.</p>
+            <p>Already using Attack? <Link className="signin-link" to="/signin">Sign in</Link>.</p>
 
           </form>
         </div>

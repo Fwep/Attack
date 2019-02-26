@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
 import SplashForm from './splash_form';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
@@ -8,10 +8,5 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    processForm: user => dispatch(signup(user))
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(SplashForm);
+export default withRouter(connect(mapStateToProps, null)(SplashForm));

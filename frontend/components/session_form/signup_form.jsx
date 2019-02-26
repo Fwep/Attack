@@ -3,17 +3,19 @@ import React from 'react';
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props)
+    let splashUsername = props.location.state ? props.location.state.username : ""
+    
     this.state = {
-      username: '',
+      username: splashUsername,
       email: '',
       password: ''
     };
-
+    
+    console.log(this.state.username);
   this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.props.clear();
   }
 
   // /* This method will handle real-time updating of our user inputs */
