@@ -19,15 +19,17 @@ class SplashForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.location.state = {username: this.state.username}
-    this.props.history.push("/signup");
+    const link = document.getElementById("get_started");
+    link.click();
   }
 
   render() {
       return (
         <div className="splash-signup">
           <title>Where saving the world happens | Attack</title>
-          <form onSubmit={this.handleSubmit} className="login">
+          <form 
+          onSubmit={this.handleSubmit} 
+          className="login">
             <div className="login-form">
               <input type="text"
                 value={this.state.username}
@@ -36,7 +38,9 @@ class SplashForm extends React.Component {
                 placeholder="username"
               />
 
-              <Link to={{pathname: "/signup", state: {username: this.state.username}}}
+              <Link 
+              id="get_started"
+              to={{pathname: "/signup", state: {username: this.state.username}}}
               className="form__sign-up form__sign-up:hover">Get Started</Link>
             </div>
 

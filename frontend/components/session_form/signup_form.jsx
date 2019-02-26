@@ -15,6 +15,7 @@ class SignUpForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clear();
   }
 
   // /* This method will handle real-time updating of our user inputs */
