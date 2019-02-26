@@ -23,10 +23,6 @@ class SplashForm extends React.Component {
       .then(this.props.history.push("/signup"));
   }
 
-  componentDidMount() {
-    console.log(this.props.location)
-  }
-
   render() {
       return (
         <div className="splash-signup">
