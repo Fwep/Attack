@@ -18,8 +18,8 @@ const App = () => (
       <AuthRoute exact path="/signin" component={LoginFormContainer}/>
       <AuthRoute exact path="/signup" component={PlainNavBar}/>
       <AuthRoute exact path="/signup" component={SignupContainer}/>
-      <Route exact path="/" component={SplashContainer}/>
       <ProtectedRoute path="/channels/:channelId" component={Main} />
+      <Route exact path="/" component={SplashContainer}/>
     </React.Fragment>
 );
 
