@@ -1,4 +1,6 @@
 import * as APIUtil from '../util/session_api_util';
+import * as ChannelAPIUtil from '../util/channels_api_util';
+import {receiveChannels} from './channel_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -33,6 +35,8 @@ export const login = user => dispatch => {
   return APIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
       err => dispatch(receiveErrors(err.responseJSON)))
+  .then(ChannelAPIUtil.fetchChannels()
+    .then(channels => dispatch(receiveChannels(channels))))
 };
 
 export const logout = () => dispatch => {

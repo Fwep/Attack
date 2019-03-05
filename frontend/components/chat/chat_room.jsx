@@ -19,9 +19,19 @@ class ChatRoom extends React.Component {
   
   componentDidUpdate(prevProps) { 
   // Don't use ComponentWillReceiveProps, it's dangerous and deprecated in React 17
+    const {
+      fetchMessages,
+      createSubscription,
+      channelId,
+      receiveMessage
+    } = this.props;
+
     if (prevProps.channelId !== this.props.channelId) {
-      this.props.fetchMessages(this.props.channelId);
+      fetchMessages(this.props.channelId);
+      fetchMessages(channelId);
+      createSubscription(channelId, receiveMessage);
     }
+    
     const messageList = document.getElementById("messagelist");
     messageList.scrollTop = messageList.scrollHeight;
   }
