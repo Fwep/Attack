@@ -28,7 +28,8 @@ class SignUpForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      .then(() => this.props.history.replace(`/channels/`));
+      .then(() => this.props.history.replace(`/channels/`))
+      .then(this.props.fetchChannels())
   }
 
   handleDemo(e) {
@@ -37,7 +38,6 @@ class SignUpForm extends React.Component {
       const user = Object.assign({}, this.state);
       this.props.processForm(user)
         .then(this.props.fetchChannels())
-        .then(console.log(this.props.channels))
     });
   }
 
