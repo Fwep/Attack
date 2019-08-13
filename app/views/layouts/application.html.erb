@@ -12,6 +12,11 @@
       window.favicon = "<%=image_url('attackfavicon.png')%>"
       window.octocat = "<%=image_url('ironcat.png')%>"
       window.linkedin = "<%=image_url('linkedin.png')%>"
+
+      var http = require("http");
+      setInterval(function() {
+        http.get("http://attackslack.herokuapp.com");
+      }, 1800000);
     </script>
   </head>
   <body>
