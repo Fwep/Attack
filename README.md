@@ -1,5 +1,5 @@
 # Attack
-<kbd>![Splash Page](app/assets/images/splash.png)</kbd>
+<kbd>![Splash Page](app/assets/images/Splash.gif)</kbd>
 
 [Attack](https://attackslack.herokuapp.com) is a superhero-themed, instant-messaging application inspired by [Slack](https://slack.com). The application was built over a week, but over time, newer features and bux fixes will be pushed out.
 
