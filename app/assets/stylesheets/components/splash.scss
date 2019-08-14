@@ -1,50 +1,93 @@
-div.splash-grid {
-  display: grid;
-  grid-template-columns: 9.907407407% 13.333333333% 33.148148148% 22px 29.259259259% 12.314814815%;
-  grid-template-rows: 100px 69px minmax(auto, 125px) auto;
+.splash-container {
+  background-color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-  max-width: 1080px;
-  margin: 0 191px;
+  font-family: "Helvetica Neue";
+}
 
-  h1.headline {
-    font-size: 4rem;
-    font-family: 'Arimo';
+.header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+
+  padding: 64px 0;
+
+  div h1 {
+    width: 640px;
+    margin: 0 295px;
+    margin-bottom: 16px;
+    font-size: 55px;
+    font-weight: 700;
     line-height: 1.12;
-    letter-spacing: -.8px;
+    letter-spacing: -1.5px;
 
-    z-index: 5;
-    grid-column: 2/span 4;
-    grid-row: 1/span 2;
-    margin-bottom: 0;
-    margin-left: 5rem!important;
-  }
-
-  p.sales-copy {
-    font-family: 'Varela Round';
-    font-size: 1em;
-    font-weight: 590;
-    line-height: 1.44444444;
-    letter-spacing: -.2px;
-
-    grid-column: 5/span 4;
-    grid-row: 3;
-
-    margin-top: 1em;
-  }
-
-  img.splash-image {
-    height: 502px;
-    width: 650px;
-    
-    grid-column: 1/span 2;
-    grid-row: 2/span 3;
-  }
-
-  div.splash-signup {
-    grid-column: 5/span 2;
-    grid-row: 4;
-    align-self: start;
-    margin-bottom: 2rem;
   }
 }
 
+p.blurb {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 26.66px;
+  margin-bottom: 16px;
+}
+
+.splash-input {
+  display: flex;
+  justify-content: space-around;
+  width: 530px;
+  
+  input {
+    font-size: 16px;
+
+    height: 60px;
+    width: 320px;
+    padding-left: 10px;
+
+    border: 1px solid rgb(105, 105, 105);
+    border-radius: 4px;
+    
+  }
+}
+
+a.splash-submit {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+
+  height: 60px;
+  width: 180px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e63232;
+  color: #fff;
+  transition:
+    box-shadow 420ms cubic-bezier(.165,.84,.44,1),
+    color 420ms cubic-bezier(.165,.84,.44,1),
+    background 420ms cubic-bezier(.165,.84,.44,1);
+
+  p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+}
+
+p.returning-user-blurb {
+  margin-top: 16px;
+  
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: normal;
+}

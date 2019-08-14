@@ -18,10 +18,9 @@
 // CSS Reset
 @import "base/reset";
 
-// Core
-main#root {
-  width: 100%;
-  height: 100%;
+div#root {
+  width: 100vw;
+  height: 100vh;
 }
 // Components
 @import "components/*";

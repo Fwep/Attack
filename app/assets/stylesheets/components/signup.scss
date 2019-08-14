@@ -3,29 +3,47 @@ html {
 }
 
 div.signup-master-div {
-  margin-top: 50px;
+  margin-top: 10vh;
+
+  
+  font-family: "Helvetica Neue";
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: column nowrap;
   align-items: center;
   height: 80%;
 
   div.modal {
-    padding: 2rem;
-    border-radius: 4px;
-    width: 25%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: baseline;
-    background-color: #fff;
-    height: 80%;
+    background-color: white;
+
+    width: 29%;
+    padding: 2rem 2rem 1rem;
+
+    border-radius: .25rem;
+    box-shadow: 0 1px 0 rgba(0,0,0,.25);
+    border: 1px solid #e8e8e8;
+    height: 460px;
+
+
+    display: grid;
+    grid-template: 20% 66% 50% / 20% 1fr 20%;
+    @media (max-width: 48rem) { 
+        grid-template: 20% 82% 50% / 20% 1fr 20%;
+    }
 
     h1 {
-      align-self: flex-start;
-      font-size: 2rem;
-      font-weight: 700;
-      font-family: sans-serif;
+      grid-area: 1/2/span 1/3;
+      text-align: center;
+      font-size: 1.6rem;
+    } 
+
+    @media (max-width: 765px) {
+      h1 {
+          font-size: 1.3em;
+      }
+
+      p {
+        font-size: .9em;
+      }
     }
 
     p {
@@ -34,11 +52,17 @@ div.signup-master-div {
     }
 
     form {
-      width: 80%;
+      grid-area: 2/2/span 1/span 1;
+      justify-self: stretch;
+      align-self: center;
+
       display: flex;
       flex-flow: column nowrap;
-      align-items: flex;
-      @media (max-width: 48rem) {align-items: center;}
+//       width: 80%;
+//       display: flex;
+//       flex-flow: column nowrap;
+//       align-items: flex;
+//       @media (max-width: 48rem) {align-items: center;}
 
       input {
         margin: 0 0 0.5rem;
@@ -64,17 +88,17 @@ div.signup-master-div {
         width: 100%;
         @media (min-width: 48rem) {width: 100%;}
 
-        transition: // Similar to Slack's transition! Almost exactly the same, actually
+        transition:
         box-shadow 420ms cubic-bezier(.165,.84,.44,1),
         color 420ms cubic-bezier(.165,.84,.44,1),
         background 420ms cubic-bezier(.165,.84,.44,1)
       }
 
-      input[type="submit"]:hover {
-        background-color: #f7e338;
-        border-color: #f7e338;
-        color: #f44336
-      }
+//       input[type="submit"]:hover {
+//         background-color: #f7e338;
+//         border-color: #f7e338;
+//         color: #f44336
+//       }
 
       input:not(.submit) {
         display: inline-block;

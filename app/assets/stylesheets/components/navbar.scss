@@ -1,5 +1,6 @@
 .splash-navbar {
- margin: 0 11em;
+ height: 70px;
+ margin: 0 calc(35vw / 2);
 
  display: flex;
  justify-content: space-between;
@@ -11,13 +12,21 @@
    display: flex;
    justify-content: space-between;
    align-items: baseline;
-   
-   li {
-     padding: 1rem;
-   }
+  }
 
+  .splash-navbar-right {
+     li {
+     padding: 16px;
+   }
+  }
+  
+  .splash-navbar-left {
+     li {
+     padding: 16px 30px;
+   }
   }
 }
+
 li img {
   height: 50px;
   width: 50px;

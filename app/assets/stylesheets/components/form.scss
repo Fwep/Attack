@@ -6,9 +6,13 @@ form p {
     @media (min-width: 64rem) {font-size: .875rem;}
 }
 
-form p a.signin-link {
+p a.signin-link {
   color: #a72a2a;
   border-bottom: 1px solid #e63232;
+}
+
+p a.signin-link:hover {
+  border-bottom: 2px solid #e63232;
 }
 
 
@@ -48,7 +52,7 @@ input.form__sign-up {
   background-color: #e63232;
 
   color: #fff;
-  font-family: sans-serif;
+  font-family: "Helvetica Neue";
   font-size: .875rem;
   font-weight: 700;
   text-decoration: none;
@@ -57,7 +61,7 @@ input.form__sign-up {
   line-height: 1.3;
   text-transform: uppercase;
 
-  transition: // Similar to Slack's transition! Almost exactly the same, actually
+  transition:
   box-shadow 420ms cubic-bezier(.165,.84,.44,1),
   color 420ms cubic-bezier(.165,.84,.44,1),
   background 420ms cubic-bezier(.165,.84,.44,1)
