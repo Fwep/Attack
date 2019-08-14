@@ -13,8 +13,6 @@
 
 class User < ApplicationRecord
   attr_reader :password
-  # Rails validation to ensure username, email, session token, and password digest
-  # exist
   validates :username, :email, :session_token, presence: true
   validates :password_digest, presence: {message: 'Password can\'t be blank'}
   # Rails validation to ensure username, email are unique
