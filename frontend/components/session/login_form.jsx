@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-class SignUpForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -16,26 +17,24 @@ class SignUpForm extends React.Component {
     this.props.clear();
   }
 
-  // /* This method will handle real-time updating of our user inputs */
   update(field) {
     return e => {
       this.setState({[field]: e.target.value})
     };
   }
 
-  // /* This method will handle submission of our form */
   handleSubmit(e) {
+    let { processForm } = this.props
+    
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.processForm(this.state)
       .then(this.props.fetchChannels())
   }
 
   handleDemo(e) {
     e.preventDefault();
     this.setState({username: 'Batman', password: 'TonyStarkSucks'}, () => {
-      const user = Object.assign({}, this.state);
-      this.props.processForm(user)
+      this.props.processForm(this.state)
         .then(this.props.fetchChannels())
     });
   }
@@ -54,32 +53,38 @@ class SignUpForm extends React.Component {
 
   render() {
       return (
-        // /* The main div container for the from */
         <div className="login-master-div">
           <title>Sign in | Attack</title>
+          <div class="plainNav">
+            <Link to="/">
+              <img src={window.favicon} alt="attackfavicon" />
+            </Link>
+          </div>
           <div className="modal">
             <h1>Sign in to Attack</h1>
-            <p>Enter your <b>username</b> and <b>password.</b></p>
+            <p>
+              Enter your <b>username</b> and <b>password.</b>
+            </p>
             <form onSubmit={this.handleSubmit}>
-            {this.renderErrors()}
-                <input
-                  type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  placeholder="username"
-                />
+              {this.renderErrors()}
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="username"
+              />
 
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  placeholder="password"
-                />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="password"
+              />
 
-
-              <input type="submit" value="Submit" className="submit"/>
-              <button onClick={this.handleDemo} className="submit">Demo Login</button>
-
+              <input type="submit" value="Submit" className="submit" />
+              <button onClick={this.handleDemo} className="submit">
+                Demo Login
+              </button>
             </form>
           </div>
         </div>
@@ -87,4 +92,4 @@ class SignUpForm extends React.Component {
     }
 }
 
-export default SignUpForm;
+export default LoginForm;
