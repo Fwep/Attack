@@ -35,13 +35,13 @@ const NavBar = ({currentUser, logout}) => {
 
         <li>
           <a href="https://www.github.com/Fwep">
-            <img src={window.octocat} alt="Github" title="Github"/>
+            <img src={window.octocat} alt="Github"/>
           </a>
         </li>
 
         <li>
           <a href="https://www.linkedin.com/in/tarancacacho">
-            <img src={window.linkedin} alt="LinkedIn" title="LinkedIn"/>
+            <img src={window.linkedin} alt="LinkedIn"/>
           </a>
         </li>
       </ul>

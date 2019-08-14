@@ -35,19 +35,17 @@ export const login = user => dispatch => {
   return APIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
       err => dispatch(receiveErrors(err.responseJSON)))
-  .then(ChannelAPIUtil.fetchChannels()
-    .then(channels => dispatch(receiveChannels(channels))))
+    .then(ChannelAPIUtil.fetchChannels())
+    .then(channels => dispatch(receiveChannels(channels)))
 };
 
 export const logout = () => dispatch => {
   return APIUtil.logout()
-    .then(user => (
-      dispatch(logoutCurrentUser())
-    ))
+    .then(() => dispatch(logoutCurrentUser()))
 };
 
 export const signup = user => dispatch => {
   return APIUtil.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-      err => dispatch(receiveErrors(err.responseJSON)));
+    err => dispatch(receiveErrors(err.responseJSON)));
 };
