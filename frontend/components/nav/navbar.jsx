@@ -29,7 +29,10 @@ const NavBar = ({currentUser, logout}) => {
       <ul className="splash-navbar-left">
         <li>
           <Link to="/">
-            <img src={window.favicon} alt="attackfavicon"/>
+            <div className="logo-title">
+              <img src={window.favicon} alt="attackfavicon"/>
+              <h1>Attack</h1>
+            </div>
           </Link>
         </li>
 
