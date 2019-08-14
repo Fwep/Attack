@@ -33,10 +33,10 @@ export const clearErrors = () => ({
 
 export const login = user => dispatch => {
   return APIUtil.login(user)
-    .then(user => dispatch(receiveCurrentUser(user)),
-      err => dispatch(receiveErrors(err.responseJSON)))
-    .then(ChannelAPIUtil.fetchChannels())
-    .then(channels => dispatch(receiveChannels(channels)))
+    .then(
+      user => dispatch(receiveCurrentUser(user)),
+      err => dispatch(receiveErrors(err.responseJSON))
+    )
 };
 
 export const logout = () => dispatch => {
@@ -46,6 +46,8 @@ export const logout = () => dispatch => {
 
 export const signup = user => dispatch => {
   return APIUtil.signup(user)
-    .then(user => dispatch(receiveCurrentUser(user)),
-    err => dispatch(receiveErrors(err.responseJSON)));
+    .then(
+      user => dispatch(receiveCurrentUser(user)),
+      err => dispatch(receiveErrors(err.responseJSON))
+    );
 };

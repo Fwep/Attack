@@ -35,8 +35,9 @@ class LoginForm extends React.Component {
     e.preventDefault();
     this.setState({username: 'Batman', password: 'TonyStarkSucks'}, () => {
       this.props.processForm(this.state)
-        .then(this.props.fetchChannels())
+        .then(() => this.props.history.push('/channels'))
     });
+  
   }
 
   renderErrors() {
