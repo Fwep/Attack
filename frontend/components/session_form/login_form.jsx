@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
       return (
         <div className="login-master-div">
           <title>Sign in | Attack</title>
-          <div class="plainNav">
+          <div className="plainNav">
             <Link to="/">
               <img src={window.favicon} alt="attackfavicon" />
             </Link>
