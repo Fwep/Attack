@@ -1,3 +1,21 @@
+@mixin mobile {
+  @media only screen and (max-width: 425px) { 
+    @content; 
+  }
+}
+
+@mixin mobile-to-laptop {
+  @media only screen and (max-width: 1024px) and (min-width: 426px) {
+    @content;
+  }
+}
+
+@mixin laptop-to-laptop-L {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
 .floaty-cw {
   position: absolute;
   max-width: 30px;
@@ -103,31 +121,61 @@
 #float1 {
   top: 10em;
   left: 8em;
+  @include laptop-to-laptop-L {
+    top: 9em;
+    left: 3em;
+  }
+  @include mobile-to-laptop {
+    display: none;
+  }
 }
 
 #float2 {
   top: 10em;
   right: 8em;
+  @include laptop-to-laptop-L {
+    top: 12em;
+    right: 2em;
+  }
+  @include mobile-to-laptop {
+    display: none;
+  }
 }
 
 #float3 {
   top: 30em;
   right: 74em;
+  @include laptop-to-laptop-L {
+    top: 30em;
+    right: 52em;
+  }
 }
 
 #float4 {
   top: 13em;
   left: 20em;
+  @include laptop-to-laptop-L {
+    top: 13em;
+    left: 5em;
+  }
+  @include mobile-to-laptop {
+    display: none;
+  }
 }
 
 #float5 {
   top: 30em;
-  left: 6em;
+  left: 2em;
 }
 
 #float6 {
   top: 15em;
   left: 27em;
+  @include laptop-to-laptop-L {
+    top: 19em;
+    left: 8em;
+  }
+  display: none;
 }
 
 #float7 {
@@ -138,39 +186,69 @@
 #float8 {
   top: 24em;
   left: 15em;
+  @include laptop-to-laptop-L {
+    top: 25em;
+    left: 13em;
+  }
 }
 
 #float9 {
   top: 8em;
   left: 30em;
+  @include laptop-to-laptop-L {
+    left: 9em;
+  }
+  @include mobile-to-laptop {
+    left: 8em;
+  }
 }
 
 #float10 {
   top: 25em;
-  right: 11em;
+  right: 3em;
 }
 
 #float11 {
   top: 7em;
   right: 20em;
+  @include laptop-to-laptop-L {
+    top: 7em;
+    right: 8em;
+  }
 }
 
 #float12 {
   top: 18em;
   right: 26em;
+  @include laptop-to-laptop-L {
+    top: 21em;
+    right: 9em;
+  }
 }
 
 #float13 {
   top: 33em;
   right: 7em;
+  @include mobile-to-laptop {
+    display: none;
+  }
 }
 
 #float14 {
   top: 8.9em;
   right: 30em;
+  @include laptop-to-laptop-L {
+    top: 8.9em;
+    right: 11em;
+  }
 }
 
 #float15 {
   top: 29em;
   right: 51em;
+  @include laptop-to-laptop-L {
+    top: 29em;
+    right: 39em;
+
+  }
 }

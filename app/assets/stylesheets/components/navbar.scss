@@ -1,3 +1,21 @@
+@mixin mobile {
+  @media only screen and (max-width: 425px) { 
+    @content; 
+  }
+}
+
+@mixin mobile-to-laptop {
+  @media only screen and (max-width: 1024px) and (min-width: 426px) {
+    @content;
+  }
+}
+
+@mixin laptop-to-laptop-L {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
 .splash-navbar {
  height: 70px;
  margin: 0 calc(35vw / 2);
@@ -5,7 +23,7 @@
  display: flex;
  justify-content: space-between;
 
- font-family: 'Varela Round';
+ font-family: 'Helvetica Neue';
  font-size: 0.95em;
 
  .splash-navbar-right, .splash-navbar-left {
@@ -15,15 +33,29 @@
   }
 
   .splash-navbar-right {
-     li {
+    li {
      padding: 16px;
-   }
+    }
   }
   
   .splash-navbar-left {
-     li {
-     padding: 16px 30px;
-   }
+    .logo-title {
+      display: flex;
+    }
+    
+    li {
+      padding: 16px 25px;
+      align-self: flex-start;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
   }
 }
 

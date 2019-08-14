@@ -1,3 +1,21 @@
+@mixin mobile {
+  @media only screen and (max-width: 425px) { 
+    @content; 
+  }
+}
+
+@mixin mobile-to-laptop {
+  @media only screen and (max-width: 1024px) and (min-width: 426px) {
+    @content;
+  }
+}
+
+@mixin laptop-to-laptop-L {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
 .splash-container {
   background-color: #FFFFFF;
   width: 100vw;
@@ -24,7 +42,12 @@
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: -1.5px;
-
+    @include mobile {
+      width: 100%;
+      margin: 0;
+      font-size: 40px;
+    }
+    
   }
 }
 
@@ -34,12 +57,30 @@ p.blurb {
   letter-spacing: -0.2px;
   line-height: 26.66px;
   margin-bottom: 16px;
+
+  @include mobile {
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0;
+  }
 }
 
 .splash-input {
   display: flex;
   justify-content: space-around;
+  @include mobile {
+    justify-content: center;
+  }
   width: 530px;
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      width: 100px;
+    }
+  }
   
   input {
     font-size: 16px;

@@ -1,10 +1,29 @@
+@mixin mobile {
+  @media only screen and (max-width: 425px) { 
+    @content; 
+  }
+}
+
+@mixin mobile-to-laptop {
+  @media only screen and (max-width: 1024px) and (min-width: 426px) {
+    @content;
+  }
+}
+
 html {
   background-color: #f9f9f9;
 }
 
+
 div.signup-master-div {
   margin-top: 10vh;
-  overflow: hidden;
+  @include mobile {
+    margin: 0;
+  }
+
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
   
   font-family: "Helvetica Neue";
   display: flex;
@@ -16,12 +35,22 @@ div.signup-master-div {
     background-color: white;
 
     width: 29%;
+    @include mobile {
+      width: 100%;
+    }
+    @include mobile-to-laptop {
+      width: 70%;
+    }
+
     padding: 2rem 2rem 1rem;
 
     border-radius: .25rem;
     box-shadow: 0 1px 0 rgba(0,0,0,.25);
     border: 1px solid #e8e8e8;
     height: 460px;
+    @include mobile {
+      height: 100%;
+    }
 
 
     display: grid;
@@ -36,19 +65,26 @@ div.signup-master-div {
       font-size: 1.6rem;
     } 
 
-    @media (max-width: 765px) {
+    @include mobile {
       h1 {
-          font-size: 1.3em;
+          font-size: 1.5em;
       }
 
       p {
-        font-size: .9em;
+        font-size: .5em;
       }
     }
 
     p {
       margin: 0 0 0.5rem;
-      color: dimgrey;
+      color: black;
+      font-size: small;
+      @include mobile {
+        font-size: .7em;
+      }
+      @include mobile-to-laptop {
+        font-size: .9em;
+      }
     }
 
     form {
@@ -58,11 +94,6 @@ div.signup-master-div {
 
       display: flex;
       flex-flow: column nowrap;
-//       width: 80%;
-//       display: flex;
-//       flex-flow: column nowrap;
-//       align-items: flex;
-//       @media (max-width: 48rem) {align-items: center;}
 
       input {
         margin: 0 0 0.5rem;
@@ -111,7 +142,9 @@ div.signup-master-div {
         color: #5b5e6d;
         font-family: sans-serif;
         font-size: calc(1rem + (-1 * (100vw - 400px)/ 624));
-        @media (min-width: 48rem) {font-size: .9375rem;}
+        @media (min-width: 48rem) {
+          font-size: .9375rem;
+        }
 
         line-height: 1.2;
 

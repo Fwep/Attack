@@ -1,10 +1,27 @@
+@mixin mobile {
+  @media only screen and (max-width: 425px) { 
+    @content; 
+  }
+}
+
+@mixin mobile-to-laptop {
+  @media only screen and (max-width: 1024px) and (min-width: 426px) {
+    @content;
+  }
+}
+
+@mixin laptop-to-laptop-L {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
 html {
   background-color: #f9f9f9;
 }
 
 div.login-master-div {
   font-family: "Helvetica Neue";
-
   display: flex;
 
   flex-flow: column nowrap;
@@ -16,6 +33,15 @@ div.login-master-div {
     background-color: white;
 
     width: 29%;
+    @include mobile {
+      width: 100%;
+    }
+    @include mobile-to-laptop {
+      width: 100%;
+    }
+    @include laptop-to-laptop-L {
+      width: 60%;
+    }
     padding: 2rem 2rem 1rem;
     
     border-radius: .25rem;
