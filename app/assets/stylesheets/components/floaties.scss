@@ -1,0 +1,176 @@
+.floaty-cw {
+  position: absolute;
+  max-width: 30px;
+  max-height: 30px;
+
+  -webkit-animation: circle-cw 5s linear infinite, fadein 2s;
+  -moz-animation: circle-cw 5s linear infinite, fadein 2s;
+  -o-animation: circle-cw 5s linear infinite, fadein 2s;
+  animation: circle-cw 5s linear infinite, fadein 2s;
+}
+
+@-webkit-keyframes circle-cw {
+  from {-webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {-webkit-transform: rotate(360deg) translateX(10px) rotate(-360deg);}
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-moz-keyframes circle-cw {
+  from {-webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {-webkit-transform: rotate(360deg) translateX(10px) rotate(-360deg);}
+}
+
+@-moz-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-o-keyframes circle-cw {
+  from {-webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {-webkit-transform: rotate(360deg) translateX(10px) rotate(-360deg);}
+}
+
+@-o-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes circle-cw {
+  from {transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {transform: rotate(360deg) translateX(10px) rotate(-360deg);}
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.floaty-ccw {
+  position: absolute;
+  max-width: 30px;
+  max-height: 30px;
+
+  -webkit-animation: circle-ccw 5s linear infinite, fadein 2s;
+  -moz-animation: circle-ccw 5s linear infinite, fadein 2s;
+  -o-animation: circle-ccw 5s linear infinite, fadein 2s;
+  animation: circle-ccw 5s linear infinite, fadein 2s;
+}
+
+@-webkit-keyframes circle-ccw {
+  from {-webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {-webkit-transform: rotate(-360deg) translateX(10px) rotate(360deg);}
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-moz-keyframes circle-ccw {
+  from {-webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {-webkit-transform: rotate(-360deg) translateX(10px) rotate(360deg);}
+}
+
+@-moz-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-o-keyframes circle-ccw {
+  from {-webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {-webkit-transform: rotate(-360deg) translateX(10px) rotate(360deg);}
+}
+
+@-o-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes circle-ccw {
+  from {transform: rotate(0deg) translateX(10px) rotate(0deg);}
+  to {transform: rotate(-360deg) translateX(10px) rotate(360deg);}
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#float1 {
+  top: 10em;
+  left: 8em;
+}
+
+#float2 {
+  top: 10em;
+  right: 8em;
+}
+
+#float3 {
+  top: 30em;
+  right: 74em;
+}
+
+#float4 {
+  top: 13em;
+  left: 20em;
+}
+
+#float5 {
+  top: 30em;
+  left: 6em;
+}
+
+#float6 {
+  top: 15em;
+  left: 27em;
+}
+
+#float7 {
+  top: 30em;
+  right: 25em;
+}
+
+#float8 {
+  top: 24em;
+  left: 15em;
+}
+
+#float9 {
+  top: 8em;
+  left: 30em;
+}
+
+#float10 {
+  top: 25em;
+  right: 11em;
+}
+
+#float11 {
+  top: 7em;
+  right: 20em;
+}
+
+#float12 {
+  top: 18em;
+  right: 26em;
+}
+
+#float13 {
+  top: 33em;
+  right: 7em;
+}
+
+#float14 {
+  top: 8.9em;
+  right: 30em;
+}
+
+#float15 {
+  top: 29em;
+  right: 51em;
+}
