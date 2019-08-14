@@ -8,15 +8,36 @@
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <script>
-      window.splashimage = "<%=image_url('batman_and_superman_water_cooler.png')%>"
       window.favicon = "<%=image_url('attackfavicon.png')%>"
       window.octocat = "<%=image_url('ironcat.png')%>"
       window.linkedin = "<%=image_url('linkedin.png')%>"
 
-      var http = require("http");
-      setInterval(function() {
-        http.get("http://attackslack.herokuapp.com");
-      }, 1800000);
+      window.aquaman = "<%= image_url('logos/aquaman.png')%>"
+      window.batman = "<%= image_url('logos/batman-icon.png')%>"
+      window.blackpanther = "<%= image_url('logos/black-panther.png')%>"
+      window.captainamerica = "<%= image_url('logos/captain-america.png')%>"
+      window.flash = "<%= image_url('logos/flash.png')%>"
+      window.gauntlet = "<%= image_url('logos/gauntlet.png')%>"
+      window.greenlantern = "<%= image_url('logos/green-lantern.png')%>"
+      window.hulk = "<%= image_url('logos/hulk.png')%>"
+      window.ironman = "<%= image_url('logos/ironman.png')%>"
+      window.joker = "<%= image_url('logos/joker.png')%>"
+      window.spiderman = "<%= image_url('logos/spiderman-icon.png')%>"
+      window.superman = "<%= image_url('logos/superman-icon.png')%>"
+      window.thor = "<%= image_url('logos/thor.png')%>"
+      window.venom = "<%= image_url('logos/venom.png')%>"
+      window.ww = "<%= image_url('logos/ww.png')%>"
+
+      function httpGet(url) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", url);
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+      }
+      
+      setInterval(() => {
+        httpGet("http://attackslack.herokuapp.com");
+      }, 300000);
     </script>
   </head>
   <body>
