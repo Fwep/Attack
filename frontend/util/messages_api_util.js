@@ -1,5 +1,5 @@
 export const fetchMessages = (channelId) => {
-  return $.ajax({ // Channel-specific messages, not ALL messages
+  return $.ajax({
     method: 'GET',
     url: `/api/channels/${channelId}/messages`
   })
