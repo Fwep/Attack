@@ -28,14 +28,14 @@ user14 = User.create(username: "Thanos", email: "lebronjames@nba.com", password:
 user15 = User.create(username: "gr33ng0blin", email: "norman@oscorp.co", password: "money4ndp0w3r")
 
 
-channel1 = Channel.create(name: "general", description: "This channel is for team-wide communication and announcements. All team members are in this channel.", private: false, is_direct: false, creator_id: user1.id)
-channel2 = Channel.create(name: "justiceleague", description: "The most judicious justices of this unjust era", private: false, is_direct: false, creator_id: user2.id)
-channel3 = Channel.create(name: "avengers", description: "The Aven (get it?)", private: false, is_direct: false, creator_id: user4.id)
-channel4 = Channel.create(name: "fantastic-four", description: "The fourth channel dedicated for the fourthiest foursome of four fighters", private: false, is_direct: false, creator_id: user7.id)
-channel5 = Channel.create(name: "mutants", description: "Communication for mutated misfits", private: false, is_direct: false, creator_id: user5.id)
-channel6 = Channel.create(name: "newyork-heroes", description: "The definitive forum for fellow Big Appler life-savers", private: true, is_direct: false, creator_id: user3.id)
-channel7 = Channel.create(name: "moms", description: "The real heroes", private: false, is_direct: false, creator_id: user11.id)
-channel8 = Channel.create(name: "supervillains", description: "Because Attack doesn't discriminate", private: false, is_direct: false, creator_id: user11.id)
+channel1 = Channel.create(name: "general", description: "This channel is for team-wide communication and announcements. All team members are in this channel.", is_private: false, is_direct: false, creator_id: user1.id)
+channel2 = Channel.create(name: "justiceleague", description: "The most judicious justices of this unjust era", is_private: false, is_direct: false, creator_id: user2.id)
+channel3 = Channel.create(name: "avengers", description: "The Aven (get it?)", is_private: false, is_direct: false, creator_id: user4.id)
+channel4 = Channel.create(name: "fantastic-four", description: "The fourth channel dedicated for the fourthiest foursome of four fighters", is_private: false, is_direct: false, creator_id: user7.id)
+channel5 = Channel.create(name: "mutants", description: "Communication for mutated misfits", is_private: false, is_direct: false, creator_id: user5.id)
+channel6 = Channel.create(name: "newyork-heroes", description: "The definitive forum for fellow Big Appler life-savers", is_private: true, is_direct: false, creator_id: user3.id)
+channel7 = Channel.create(name: "moms", description: "The real heroes", is_private: false, is_direct: false, creator_id: user11.id)
+channel8 = Channel.create(name: "supervillains", description: "Because Attack doesn't discriminate", is_private: false, is_direct: false, creator_id: user11.id)
 
 message1 = Message.create(user_id: user3.id, channel_id: channel3.id, body: "I don't feel so good...I don't wanna go! I don't wanna go!",)
 message2 = Message.create(user_id: user2.id, channel_id: channel2.id, body: "I'm Batman.")
