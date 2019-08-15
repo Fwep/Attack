@@ -13,16 +13,25 @@
 #
 
 class Channel < ApplicationRecord
+  before_save :lowercase_channel_name
   validates :name, presence: true, uniqueness: true, length: { maximum: 25 }
   validates :description, length: { maximum: 250 }
-  validates :private, :is_direct, inclusion: { in: [true, false]}
+  validates :is_private, :is_direct, inclusion: { in: [true, false]}
 
   belongs_to :creator,
     primary_key: :id,
     foreign_key: :creator_id,
     class_name: :User
-  has_many :messages
-  has_many :subscriptions
+  has_many :messages,
+    dependent: :destroy
+
+  has_many :subscriptions,
+    dependent: :destroy
   has_many :users,
     through: :subscriptions
+    
+  private
+  def lowercase_channel_name
+    self.name = self.name.downcase()
+  end
 end
