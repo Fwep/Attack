@@ -18,6 +18,21 @@ export const fetchChannels = () => dispatch => (
     .then(channels => dispatch(receiveChannels(channels)))
 );
 
+export const fetchChannel = (id) => dispatch => (
+  ChannelAPIUtil.fetchChannel(id)
+    .then(channel => dispatch(receiveChannel(channel)))
+);
+
+export const updateChannel = (channel) => dispatch => (
+  ChannelAPIUtil.updateChannel(channel)
+    .then(channel => dispatch(receiveChannel(channel)))
+);
+
+export const createChannel = (channel) => dispatch => (
+  ChannelAPIUtil.createChannel(channel)
+    .then(channel => dispatch(receiveChannel(channel)))
+);
+
 export const createChannelSubscription = (channelId, receiveMessage) => dispatch => {
   App[channelId] = App.cable.subscriptions.create(
     {channel: "ChannelChannel", id: channelId},
