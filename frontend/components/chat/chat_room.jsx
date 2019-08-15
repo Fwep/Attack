@@ -18,7 +18,6 @@ class ChatRoom extends React.Component {
   }
   
   componentDidUpdate(prevProps) { 
-  // Don't use ComponentWillReceiveProps, it's dangerous and deprecated in React 17
     const {
       fetchMessages,
       createSubscription,
@@ -41,12 +40,12 @@ class ChatRoom extends React.Component {
       <MessageListItem key={message.id} message={message}/>));
 
     return (
-      <React.Fragment>
+      <>
         <ul id="messagelist" className="messages">
           {messageList}
         </ul>
         <MessageFormContainer />
-      </React.Fragment>
+      </>
     );
   }
 }
