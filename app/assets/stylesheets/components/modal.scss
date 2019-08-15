@@ -1,0 +1,78 @@
+@mixin mobile {
+  @media only screen and (max-width: 425px) { 
+    @content; 
+  }
+}
+
+@mixin mobile-to-laptop {
+  @media only screen and (max-width: 1024px) and (min-width: 426px) {
+    @content;
+  }
+}
+
+@mixin laptop-to-laptop-L {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media only screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+div.modal-background {
+  background: #FFFFFF;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-columns: auto 75% auto;
+  @include mobile {
+    grid-template: 10% auto / 1fr 3fr 1fr;
+  }
+  @include laptop-up {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
+
+button.modal-close {
+  grid-area: 2/-2/3/-3;
+  justify-self: end;
+  align-self: start;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  
+  box-sizing: border-box;
+  padding: 30px;
+  margin: -30px;
+  width: 64px;
+  height: 64px;
+
+  color: #616061;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+
+  div {
+    
+  }
+
+  span {
+    font-size: 13px;
+  }
+}
+
+button.modal-close:hover, button.modal-close div:hover, button.modal-close span:hover {
+  background-color: #ddd;
+  color: #1d1c1d;
+  border-radius: 100%;
+  cursor: pointer;
+}
