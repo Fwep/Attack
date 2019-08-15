@@ -18,8 +18,7 @@ if (!modal) return null;
   document.addEventListener('keydown', e => {
     if (e.key == "Escape") {
       let X = document.getElementById('X-button');
-      console.log("click")
-      X.click();
+      if (!!X) X.click();
     }
   })
 
