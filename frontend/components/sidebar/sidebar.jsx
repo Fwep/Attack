@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <div className="team_menu_user">
-          <button id="workspace-name" onClick={() => this.props.history.push('/')}><h2>Attack</h2></button>
+          <div id="workspace-name"><h2>Attack</h2></div>
           <p>{this.props.currentUser.username}</p>
           <button onClick={() => this.props.logOut()}>Log Out</button>
         </div>
