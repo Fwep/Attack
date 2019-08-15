@@ -44,7 +44,8 @@ class ChannelForm extends React.Component {
         name: '',
         description: '',
         is_private: false
-      }));
+      }))
+      .then(() => this.props.closeModal());
 
     // Will need to redirect to channel show
 
