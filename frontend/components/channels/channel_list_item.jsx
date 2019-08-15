@@ -9,7 +9,7 @@ class ChannelListItem extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <NavLink 
           to={`/channels/${this.props.channel.id}`}
           activeClassName="selected"
@@ -17,7 +17,7 @@ class ChannelListItem extends React.Component {
           # {this.props.channel.name}
         </NavLink>
         <br />
-      </React.Fragment>
+      </>
     )
   }
 }
