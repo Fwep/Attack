@@ -26,6 +26,7 @@ user12 = User.create(username: "Joker", email: "hahahahahahahahahahahahaha@ha.ha
 user13 = User.create(username: "ElMagneto", email: "e.lehnsherr@gmail.com", password: "Love2sing")
 user14 = User.create(username: "Thanos", email: "lebronjames@nba.com", password: "lolifyourereadingthisstoptryingtocopyme")
 user15 = User.create(username: "gr33ng0blin", email: "norman@oscorp.co", password: "money4ndp0w3r")
+user16 = User.create(username: "TaranCacacho", email: "tarancacacho@gmail.com", password: "Stilljobsearching")
 
 
 channel1 = Channel.create(name: "general", description: "This channel is for team-wide communication and announcements. All team members are in this channel.", is_private: false, is_direct: false, creator_id: user1.id)
@@ -59,14 +60,15 @@ message18 = Message.create(user_id: user15.id, channel_id: channel8.id, body: "W
 message19 = Message.create(user_id: user13.id, channel_id: channel8.id, body: "Alright, alright...who's there?")
 message20 = Message.create(user_id: user12.id, channel_id: channel8.id, body: "NOT YOUR PARENTS")
 message21 = Message.create(user_id: user14.id, channel_id: channel8.id, body: "Oh snap!")
+message21 = Message.create(user_id: user16.id, channel_id: channel7.id, body: "Love you Mom...")
 
 
-subscription1 = Subscription.create(user_id: user1.id, channel_id: channel1.id)
-subscription2 = Subscription.create(user_id: user2.id, channel_id: channel1.id)
-subscription3 = Subscription.create(user_id: user3.id, channel_id: channel1.id)
-subscription4 = Subscription.create(user_id: user4.id, channel_id: channel1.id)
-subscription5 = Subscription.create(user_id: user5.id, channel_id: channel1.id)
-subscription6 = Subscription.create(user_id: user6.id, channel_id: channel1.id)
+User.all do |user|
+  Subscription.create(user_id: user_id, channel_id = channel1.id)
+end
+Channel.all do |channel|
+  Subscription.create(user_id: user2.id, channel_id: channel.id)
+end
 subscription7 = Subscription.create(user_id: user1.id, channel_id: channel2.id)
 subscription8 = Subscription.create(user_id: user2.id, channel_id: channel2.id)
 subscription9 = Subscription.create(user_id: user3.id, channel_id: channel3.id)
@@ -84,3 +86,4 @@ subscription20 = Subscription.create(user_id: user12.id, channel_id: channel8.id
 subscription21 = Subscription.create(user_id: user13.id, channel_id: channel8.id)
 subscription22 = Subscription.create(user_id: user14.id, channel_id: channel8.id)
 subscription23 = Subscription.create(user_id: user15.id, channel_id: channel8.id)
+subscription24 = Subscription.create(user_id: user16.id, channel_id: channel7.id)
