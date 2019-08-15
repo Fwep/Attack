@@ -24,8 +24,7 @@ div.sidebar {
 
   #workspace-name {
   font-size: 1.25em;
-  font-weight: bold;
-  font-family: 'Lato';
+  font-weight: 700;
   color: #FFFFFF;
   }
 
@@ -60,6 +59,9 @@ div.sidebar {
   }
 
   .header-then-create-button {
+    h2 {
+      font-weight: 700;
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-between;
