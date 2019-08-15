@@ -96,8 +96,7 @@ padding-left: 23px;
 }
 
 .message-form-area {
-  display: grid;
-  grid-area: 3/2/-1/-1;
+  grid-area: 3/2/-1/span 1;
   padding-left: 23px;
 
   input {
@@ -113,12 +112,15 @@ padding-left: 23px;
 
     min-height: 2.5em;
     max-height: calc(60vh - 395px);
-    min-width: 1210px;
-    max-width: 100%;
+    width: 98%;
 
+    padding: 8px;
+
+    margin-right: 10px;
+    
     border: 2px solid rgba(134,134,134,.7);
     border-radius: 0.375rem;
-    padding: 8px;
+
 
   }
 
@@ -133,7 +135,7 @@ padding-left: 23px;
   }
 }
 
-.individual-message-box > * { // Bad practice, I know, but it gets the job done.
+.individual-message-box > * {
   margin-left: 23px;
   margin-right: 23px;
   overflow-x: hidden;
