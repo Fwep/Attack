@@ -10,13 +10,18 @@ class MessageList extends React.Component {
     let { fetchMessages } = this.props;
     fetchMessages(this.props.match.params.channelId);
   }
-
+  
   componentDidUpdate(prevProps) {
     let { channelId } = this.props.match.params;
-    let { prevChannelId } = prevProps.match.params;
+    let  prevChannelId = prevProps.match.params.channelId;
     let { fetchMessages } = this.props;
+
+    console.log("ChannelId", channelId);
+    console.log("Previous Channel Id", prevChannelId);
     
-    if (channelId != prevChannelId) fetchMessages(channelId);
+    if (channelId != prevChannelId) {
+      fetchMessages(channelId)
+    };
   }
 
   render() {
