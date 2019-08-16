@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import MessageList from './message_list';
 import { fetchMessages } from '../../actions/message_actions';
-import { getChannelMessages } from '../../reducers/selectors';
+import { getChannelMessages, getChannelName } from '../../reducers/selectors';
 
-const mSP = state => ({
-  messages: getChannelMessages(state)
+const mSP = (state, ownProps) => ({
+  messages: getChannelMessages(state),
+  channelName: getChannelName(state, ownProps.match.params.channelId)
 });
 
 const mDP = dispatch => ({
