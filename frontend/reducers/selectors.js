@@ -9,3 +9,7 @@ export const getUsersChannels = ({ entities: { channels } }) => (
 export const getChannelMessages = ({ entities: { messages } }) => (
   Object.values(messages).length ? Object.values(messages) : []
 );
+
+export const getChannelName = ({entities: { channels }}, channelId) => (
+  (channelId in channels) ? channels[channelId]['name'] : ""
+);
