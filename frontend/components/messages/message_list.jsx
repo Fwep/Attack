@@ -15,9 +15,6 @@ class MessageList extends React.Component {
     let { channelId } = this.props.match.params;
     let  prevChannelId = prevProps.match.params.channelId;
     let { fetchMessages } = this.props;
-
-    console.log("ChannelId", channelId);
-    console.log("Previous Channel Id", prevChannelId);
     
     if (channelId != prevChannelId) {
       fetchMessages(channelId)
@@ -28,9 +25,12 @@ class MessageList extends React.Component {
     let { messages } = this.props;
     let messageList = messages.map(message => <MessageListItem key={message.id} message={message} />)
     return (
+      <>
+      <title>Attack | {this.props.channelName} </title>
       <ul>
         {messageList}
       </ul>
+      </>
     );
   }
 }
