@@ -33,9 +33,9 @@ export const createChannel = (channel) => dispatch => (
     .then(channel => dispatch(receiveChannel(channel)))
 );
 
-export const createChannelSubscription = (channelId, receiveMessage) => dispatch => {
+export const createACSubscription = (channelId, receiveMessage) => dispatch => {
   App[channelId] = App.cable.subscriptions.create(
-    {channel: "ChannelChannel", id: channelId},
+    {channel: "ChatChannel", id: channelId},
     {
       received: function(data) {
         const message = JSON.parse(data.message)
