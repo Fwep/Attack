@@ -9,6 +9,9 @@ class MessageList extends React.Component {
   componentDidMount() {
     let { fetchMessages } = this.props;
     fetchMessages(this.props.match.params.channelId);
+
+    const messageList = document.getElementById("messagelist");
+    messageList.scrollTop = messageList.scrollHeight;
   }
   
   componentDidUpdate(prevProps) {
@@ -19,6 +22,9 @@ class MessageList extends React.Component {
     if (channelId != prevChannelId) {
       fetchMessages(channelId)
     };
+
+    const messageList = document.getElementById("messagelist");
+    messageList.scrollTop = messageList.scrollHeight;
   }
 
   render() {
@@ -27,7 +33,7 @@ class MessageList extends React.Component {
     return (
       <>
       <title>Attack | {this.props.channelName} </title>
-      <ul>
+      <ul id="messagelist" className="messages">
         {messageList}
       </ul>
       </>
