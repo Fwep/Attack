@@ -44,6 +44,7 @@ div.sidebar {
 
     padding-left: 16px;
     padding-right: 0px;
+    padding-bottom: 2px;
     margin-bottom: 1.5px;
     
     display: inline-block;
@@ -165,11 +166,17 @@ padding-left: 23px;
 }
 
 ::-webkit-scrollbar {
-  height: 94.8471px; 
-  transform: translateY(343px);
+  height: 50px; 
+  width: 0.5%;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 5s;
 }
 
+
 :hover::-webkit-scrollbar-thumb {
+  height: 50px;
   border-radius: 4px;
   background-color: #e63232;
+  opacity: 1;
 }
