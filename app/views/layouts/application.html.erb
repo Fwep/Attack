@@ -27,17 +27,6 @@
       window.thor = "<%= image_url('logos/thor.png')%>"
       window.venom = "<%= image_url('logos/venom.png')%>"
       window.ww = "<%= image_url('logos/ww.png')%>"
-
-      function httpGet(url) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", url);
-        xmlHttp.send( null );
-        return xmlHttp.responseText;
-      }
-      
-      setInterval(() => {
-        httpGet("http://attackslack.herokuapp.com");
-      }, 300000);
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145731823-1"></script>
