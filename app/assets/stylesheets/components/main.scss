@@ -138,13 +138,14 @@ font-family: 'sans-serif';
   li:hover {
     background-color: #f0f0f0;
   }
-
+  
   img {
+    object-fit: cover;
     display: block;
 
-    height: 36px;
-    width: 36px;
-    
+    height: 35px;
+    width:35px;
+
     margin-right: 8px;
     border-radius: 3px;
   }
