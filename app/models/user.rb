@@ -15,7 +15,6 @@ class User < ApplicationRecord
   attr_reader :password
   validates :username, :email, :session_token, presence: true
   validates :password_digest, presence: {message: 'Password can\'t be blank'}
-  # Rails validation to ensure username, email are unique
   validates :username, :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
@@ -24,6 +23,7 @@ class User < ApplicationRecord
   has_many :subscriptions, dependent: :destroy
   has_many :channels, through: :subscriptions
   has_many :messages, dependent: :destroy
+  has_one_attached :profile_photo
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
