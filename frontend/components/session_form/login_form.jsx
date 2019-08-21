@@ -27,8 +27,9 @@ class LoginForm extends React.Component {
     let { processForm } = this.props
     
     e.preventDefault();
-    this.props.processForm(this.state)
+    processForm(this.state)
       .then(this.props.fetchChannels())
+      .then(() => this.props.history.push('/channels'))
   }
 
   handleDemo(e) {
